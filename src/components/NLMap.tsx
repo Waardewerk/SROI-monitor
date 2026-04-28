@@ -48,12 +48,14 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
   const divRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const geojsonRef = useRef<L.GeoJSON | null>(null);
-  const labelLayerRef = useRef<L.LayerGroup | null>(null);
   const dataMapRef = useRef<Map<string, GemeenteInfo>>(new Map());
   const exportSelectedRef = useRef(exportSelected);
-
+  // Keep onSelect in a ref so map never reinitializes when it changes
+  const onSelectRef = useRef(onSelect);
+  useEffect(() => { onSelectRef.current = onSelect; }, [onSelect]);
   useEffect(() => { exportSelectedRef.current = exportSelected; }, [exportSelected]);
 
+  // Build lookup + re-style
   useEffect(() => {
     const m = new Map<string, GemeenteInfo>();
     gemeenten.forEach(g => m.set(g.gmCode, g));
@@ -68,6 +70,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     }
   }, [gemeenten]);
 
+  // Re-style on selection change
   useEffect(() => {
     if (!geojsonRef.current) return;
     geojsonRef.current.setStyle((feature) => {
@@ -78,6 +81,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     });
   }, [exportSelected]);
 
+  // Init map ONCE — no dependencies that change during normal use
   useEffect(() => {
     if (!divRef.current || mapRef.current) return;
 
@@ -97,11 +101,10 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       maxZoom: 19,
     }).addTo(map);
 
-    const labelLayer = L.layerGroup().addTo(map);
-    labelLayerRef.current = labelLayer;
     mapRef.current = map;
 
-    // Update label visibility on zoom
+    const labelLayer = L.layerGroup().addTo(map);
+
     function updateLabels() {
       const z = map.getZoom();
       const el = map.getContainer();
@@ -124,16 +127,14 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
             const naam = feature.properties?.statnaam as string | undefined;
             const g = code ? dataMapRef.current.get(code) : undefined;
 
-            // Add map label at polygon center
+            // Label
             if (naam) {
               const bounds = (lyr as unknown as L.GeoJSON).getBounds?.();
               if (bounds) {
-                const center = bounds.getCenter();
                 const isLarge = g ? g.bijstand > 8000 : false;
-                const labelClass = isLarge ? 'gemeente-label label-large' : 'gemeente-label label-small';
-                const marker = L.marker(center, {
+                const marker = L.marker(bounds.getCenter(), {
                   icon: L.divIcon({
-                    className: labelClass,
+                    className: isLarge ? 'gemeente-label label-large' : 'gemeente-label label-small',
                     html: `<span>${naam}</span>`,
                     iconSize: undefined,
                     iconAnchor: undefined,
@@ -172,10 +173,11 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
                   instellingen: [], isSeeded: false,
                 } : null);
                 if (target) {
-                  onSelect(target);
+                  // Use ref so this closure never goes stale
+                  onSelectRef.current(target);
                   if (!exportSelectedRef.current.size) {
-                    const bounds2 = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
-                    if (bounds2) map.fitBounds(bounds2, { maxZoom: 13, animate: true, padding: [20, 20] });
+                    const b2 = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
+                    if (b2) map.fitBounds(b2, { maxZoom: 13, animate: true, padding: [20, 20] });
                   }
                 }
               },
@@ -193,9 +195,10 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       })
       .catch(console.error);
 
-    return () => { map.remove(); mapRef.current = null; geojsonRef.current = null; labelLayerRef.current = null; };
-  }, [onSelect]);
+    return () => { map.remove(); mapRef.current = null; geojsonRef.current = null; };
+  }, []); // empty deps — map initializes once only
 
+  // Zoom to search
   useEffect(() => {
     if (!mapRef.current || !geojsonRef.current) return;
     if (!zoek.trim()) {
@@ -210,8 +213,8 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       if (naam?.toLowerCase().startsWith(q)) found = lyr;
     });
     if (found) {
-      const bounds = (found as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
-      if (bounds) mapRef.current!.fitBounds(bounds, { maxZoom: 13, animate: true, padding: [40, 40] });
+      const b = (found as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
+      if (b) mapRef.current!.fitBounds(b, { maxZoom: 13, animate: true, padding: [40, 40] });
     }
   }, [zoek]);
 
@@ -225,27 +228,16 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         }
         .gemeente-tooltip::before { display: none; }
         .leaflet-container { background: #e8ecf0; }
-
-        /* Municipality labels */
         .gemeente-label {
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          pointer-events: none;
+          background: transparent !important; border: none !important;
+          box-shadow: none !important; pointer-events: none;
         }
         .gemeente-label span {
-          display: block;
-          white-space: nowrap;
-          font-size: 10px;
-          font-weight: 700;
+          display: block; white-space: nowrap; font-size: 10px; font-weight: 700;
           color: #1a1a2e;
-          text-shadow:
-            0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
-            1px 1px 2px #fff, -1px -1px 2px #fff;
+          text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 1px 1px 2px #fff, -1px -1px 2px #fff;
           transform: translateX(-50%);
-          letter-spacing: 0.01em;
         }
-        /* Large labels always hidden until zoom >= 8 */
         .label-large { display: none; }
         .label-small { display: none; }
         .zoom-labels-large .label-large { display: block; }
