@@ -103,14 +103,6 @@ export default function App() {
         <ExportPanel
           gemeenten={alle}
           selected={exportSelected}
-          onToggle={(code) => {
-            setExportSelected(prev => {
-              const next = new Set(prev);
-              if (next.has(code)) next.delete(code);
-              else next.add(code);
-              return next;
-            });
-          }}
           onClear={() => setExportSelected(new Set())}
         />
       )}
