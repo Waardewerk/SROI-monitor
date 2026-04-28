@@ -6,9 +6,17 @@ import type { GemeenteInfo } from '../types';
 
 const GEO_URL = 'https://cartomap.github.io/nl/wgs84/gemeente_2024.geojson';
 
+// Netherlands bounding box (loose padding so Friesland + Zeeland fit)
+const NL_BOUNDS = L.latLngBounds(
+  L.latLng(50.6, 3.2),   // SW
+  L.latLng(53.7, 7.3)    // NE
+);
+const NL_CENTER: L.LatLngExpression = [52.35, 5.27];
+const INIT_ZOOM = 7;
+
 function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
   if (isSelected) return '#C2185B';
-  if (!g) return '#dce8f5';
+  if (!g) return '#e4ecf5';
   switch (g.sroi.status) {
     case 'Verplicht': {
       const b = g.bijstand;
@@ -20,7 +28,7 @@ function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
     }
     case 'Actief':
     case 'Actief beleid': return '#90caf9';
-    default: return '#b0bec5';
+    default: return '#cfd8e8';
   }
 }
 
@@ -41,6 +49,15 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
 
   useEffect(() => { exportSelectedRef.current = exportSelected; }, [exportSelected]);
 
+  function muniStyle(g: GemeenteInfo | undefined, sel: boolean): L.PathOptions {
+    return {
+      fillColor: getColor(g, sel),
+      fillOpacity: g?.sroi.status === 'Verplicht' ? 0.80 : 0.55,
+      color: '#7a8fa8',
+      weight: 0.8,
+    };
+  }
+
   // Build lookup + re-style
   useEffect(() => {
     const m = new Map<string, GemeenteInfo>();
@@ -51,7 +68,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         const code = feature?.properties?.statcode as string | undefined;
         const g = code ? m.get(code) : undefined;
         const sel = code ? exportSelectedRef.current.has(code) : false;
-        return { fillColor: getColor(g, sel), fillOpacity: 0.75, color: '#fff', weight: 0.5 };
+        return muniStyle(g, sel);
       });
     }
   }, [gemeenten]);
@@ -63,18 +80,30 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       const code = feature?.properties?.statcode as string | undefined;
       const g = code ? dataMapRef.current.get(code) : undefined;
       const sel = code ? exportSelected.has(code) : false;
-      return { fillColor: getColor(g, sel), fillOpacity: 0.75, color: '#fff', weight: 0.5 };
+      return muniStyle(g, sel);
     });
   }, [exportSelected]);
 
   // Init map once
   useEffect(() => {
     if (!divRef.current || mapRef.current) return;
-    const map = L.map(divRef.current, { center: [52.35, 5.27], zoom: 7, zoomControl: true });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
-      maxZoom: 18,
+    const map = L.map(divRef.current, {
+      center: NL_CENTER,
+      zoom: INIT_ZOOM,
+      minZoom: 6,
+      maxZoom: 16,
+      zoomControl: true,
+      // Soft boundary: bounces back when panning too far from NL
+      maxBounds: L.latLngBounds(L.latLng(48.0, 0.5), L.latLng(55.5, 10.0)),
+      maxBoundsViscosity: 0.7,
+    });
+
+    // CartoDB Positron No Labels — clean grey background, no country/city text
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> &copy; <a href="https://carto.com">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
     }).addTo(map);
 
     mapRef.current = map;
@@ -86,7 +115,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
           style: (feature) => {
             const code = feature?.properties?.statcode as string | undefined;
             const g = code ? dataMapRef.current.get(code) : undefined;
-            return { fillColor: getColor(g, false), fillOpacity: 0.75, color: '#fff', weight: 0.5 };
+            return muniStyle(g, false);
           },
           onEachFeature: (feature, lyr) => {
             const code = feature.properties?.statcode as string | undefined;
@@ -100,9 +129,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
               mouseout: () => {
                 const g = code ? dataMapRef.current.get(code) : undefined;
                 const sel = code ? exportSelectedRef.current.has(code) : false;
-                (lyr as unknown as L.Path).setStyle({
-                  fillColor: getColor(g, sel), weight: 0.5, color: '#fff', fillOpacity: 0.75,
-                });
+                (lyr as unknown as L.Path).setStyle(muniStyle(g, sel));
               },
               click: () => {
                 const g = code ? dataMapRef.current.get(code) : undefined;
@@ -121,10 +148,9 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
                 } : null);
                 if (target) {
                   onSelect(target);
-                  // Zoom only when not multi-selecting
                   if (!exportSelectedRef.current.size) {
                     const bounds = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
-                    if (bounds) map.fitBounds(bounds, { maxZoom: 12, animate: true });
+                    if (bounds) map.fitBounds(bounds, { maxZoom: 13, animate: true, padding: [20, 20] });
                   }
                 }
               },
@@ -136,7 +162,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         layer.setStyle((feature) => {
           const code = feature?.properties?.statcode as string | undefined;
           const g = code ? dataMapRef.current.get(code) : undefined;
-          return { fillColor: getColor(g, false), fillOpacity: 0.75, color: '#fff', weight: 0.5 };
+          return muniStyle(g, false);
         });
       })
       .catch(console.error);
@@ -144,11 +170,11 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     return () => { map.remove(); mapRef.current = null; geojsonRef.current = null; };
   }, [onSelect]);
 
-  // Zoom to search result
+  // Zoom to search result — fit within NL, don't fly to Siberia
   useEffect(() => {
     if (!mapRef.current || !geojsonRef.current) return;
     if (!zoek.trim()) {
-      mapRef.current.setView([52.35, 5.27], 7, { animate: true });
+      mapRef.current.fitBounds(NL_BOUNDS, { animate: true });
       return;
     }
     const q = zoek.toLowerCase();
@@ -160,7 +186,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     });
     if (found) {
       const bounds = (found as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
-      if (bounds) mapRef.current!.fitBounds(bounds, { maxZoom: 13, animate: true });
+      if (bounds) mapRef.current!.fitBounds(bounds, { maxZoom: 13, animate: true, padding: [40, 40] });
     }
   }, [zoek]);
 
@@ -173,6 +199,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .gemeente-tooltip::before { display: none; }
+        .leaflet-container { background: #e8ecf0; }
       `}</style>
       <div ref={divRef} className="w-full h-full" />
     </>
