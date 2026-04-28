@@ -1,14 +1,21 @@
+
 export type SROIStatus = 'Verplicht' | 'Actief' | 'Actief beleid' | 'In ontwikkeling';
 
 export interface BouwblokWaarde {
   label: string;
   waarde: string;
+  sectie?: string;   // bijv. 'Banen', 'Bonussen', 'Maatwerk'
 }
 
 export interface ContactPersoon {
   naam: string;
   telefoon: string;
   regio?: string;
+}
+
+export interface Succesverhaal {
+  titel: string;
+  tekst: string;
 }
 
 export interface DoelgroepInfo {
@@ -33,6 +40,7 @@ export interface GemeenteInfo {
     beleidsdocumentUrl?: string;
     uitvoerder?: string;
     registratiesysteem?: string;
+    methode?: string;
   };
   doelgroepen: {
     bijstand: DoelgroepInfo;
@@ -45,6 +53,8 @@ export interface GemeenteInfo {
   instellingen: string[];
   contactpersonen?: ContactPersoon[];
   bouwblokwaarden?: BouwblokWaarde[];
+  erkendepartners?: string[];
+  succesverhalen?: Succesverhaal[];
   isSeeded: boolean;
 }
 
