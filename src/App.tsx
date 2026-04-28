@@ -1,5 +1,5 @@
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import TopBar from './components/TopBar';
 import KpiBar from './components/KpiBar';
@@ -42,6 +42,11 @@ export default function App() {
   const [exportSelected, setExportSelected] = useState<Map<string, GemeenteInfo>>(new Map());
   const [exportMode, setExportMode] = useState(false);
 
+  // Ref zodat de Leaflet-click handler altijd de actuele waarde leest
+  // zonder dat handleSelect opnieuw aangemaakt hoeft te worden.
+  const exportModeRef = useRef(false);
+  useEffect(() => { exportModeRef.current = exportMode; }, [exportMode]);
+
   const actief = useMemo(
     () => alle.filter(g => g.sroi.status !== 'In ontwikkeling').length,
     [alle]
@@ -52,8 +57,9 @@ export default function App() {
     [exportSelected]
   );
 
+  // Lege deps: handleSelect is stabiel en leest exportMode via ref.
   const handleSelect = useCallback((g: GemeenteInfo) => {
-    if (exportMode) {
+    if (exportModeRef.current) {
       setExportSelected(prev => {
         const next = new Map(prev);
         if (next.has(g.gmCode)) next.delete(g.gmCode);
@@ -63,7 +69,7 @@ export default function App() {
     } else {
       setGeselecteerd(g);
     }
-  }, [exportMode]);
+  }, []);
 
   const toggleExportMode = useCallback(() => {
     setExportMode(m => !m);
@@ -94,7 +100,7 @@ export default function App() {
 
       {/* Toolbar */}
       <div className="bg-white border-b border-lijn px-4 py-2 flex items-center gap-3 flex-shrink-0">
-        {/* Legend */}
+        {/* Legenda */}
         {!exportMode && (
           <div className="flex items-center gap-3 text-xs text-grijs flex-1 flex-wrap">
             <span className="flex items-center gap-1">
@@ -109,7 +115,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Export mode: selection info + download */}
+        {/* Export-modus: altijd zichtbaar zodra exportMode aan is */}
         {exportMode && (
           <div className="flex items-center gap-3 flex-1 flex-wrap">
             <span className="text-xs text-grijs">
@@ -117,15 +123,23 @@ export default function App() {
                 ? 'Klik gemeenten op de kaart om te selecteren'
                 : `${exportSelected.size} gemeente${exportSelected.size !== 1 ? 'n' : ''} geselecteerd`}
             </span>
-            {exportSelected.size > 0 && (
-              <a
-                href={csvHref}
-                download={csvFilename}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-magenta text-white hover:bg-pink-700 transition-colors no-underline">
-                <Download className="w-3.5 h-3.5" />
-                Download CSV ({exportSelected.size})
-              </a>
-            )}
+
+            {/* Download altijd zichtbaar — disabled als niets geselecteerd */}
+            <a
+              href={exportSelected.size > 0 ? csvHref : undefined}
+              download={exportSelected.size > 0 ? csvFilename : undefined}
+              onClick={exportSelected.size === 0 ? (e) => e.preventDefault() : undefined}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors no-underline ${
+                exportSelected.size > 0
+                  ? 'bg-magenta text-white hover:bg-pink-700 cursor-pointer'
+                  : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+              }`}>
+              <Download className="w-3.5 h-3.5" />
+              {exportSelected.size > 0
+                ? `Download CSV (${exportSelected.size})`
+                : 'Download CSV'}
+            </a>
+
             {exportSelected.size > 0 && (
               <button
                 onClick={() => setExportSelected(new Map())}
@@ -147,7 +161,7 @@ export default function App() {
         </button>
       </div>
 
-      {/* Main */}
+      {/* Hoofd-layout */}
       <main className="flex-1 overflow-hidden flex">
         <div className={`h-full relative transition-all duration-300 ${geselecteerd ? 'w-[60%]' : 'w-full'}`}>
           <NLMap
