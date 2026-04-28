@@ -12,7 +12,8 @@ export default function App() {
   const { alle, loading } = useCBSData();
   const [zoek, setZoek] = useState('');
   const [geselecteerd, setGeselecteerd] = useState<GemeenteInfo | null>(null);
-  const [exportSelected, setExportSelected] = useState<Set<string>>(new Set());
+  // Map<gmCode, GemeenteInfo> — stores full object so export always has data
+  const [exportSelected, setExportSelected] = useState<Map<string, GemeenteInfo>>(new Map());
   const [exportMode, setExportMode] = useState(false);
 
   const actief = useMemo(
@@ -20,12 +21,18 @@ export default function App() {
     [alle]
   );
 
+  // Set<string> of gmCodes passed to NLMap for coloring
+  const exportSelectedCodes = useMemo(
+    () => new Set(exportSelected.keys()),
+    [exportSelected]
+  );
+
   const handleSelect = useCallback((g: GemeenteInfo) => {
     if (exportMode) {
       setExportSelected(prev => {
-        const next = new Set(prev);
+        const next = new Map(prev);
         if (next.has(g.gmCode)) next.delete(g.gmCode);
-        else next.add(g.gmCode);
+        else next.set(g.gmCode, g);
         return next;
       });
     } else {
@@ -35,7 +42,7 @@ export default function App() {
 
   const toggleExportMode = useCallback(() => {
     setExportMode(m => !m);
-    setExportSelected(new Set());
+    setExportSelected(new Map());
     setGeselecteerd(null);
   }, []);
 
@@ -57,16 +64,13 @@ export default function App() {
       <div className="bg-white border-b border-lijn px-4 py-2 flex items-center gap-3 flex-shrink-0">
         <div className="flex items-center gap-3 text-xs text-grijs flex-1 flex-wrap">
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-sm bg-green-600 inline-block" />
-            Verplicht SROI
+            <span className="w-3 h-3 rounded-sm bg-green-600 inline-block" />Verplicht SROI
           </span>
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-sm bg-blue-300 inline-block" />
-            Actief beleid
+            <span className="w-3 h-3 rounded-sm bg-blue-300 inline-block" />Actief beleid
           </span>
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-sm bg-gray-400 inline-block" />
-            In ontwikkeling
+            <span className="w-3 h-3 rounded-sm bg-gray-400 inline-block" />In ontwikkeling
           </span>
         </div>
         <button
@@ -76,11 +80,13 @@ export default function App() {
               ? 'bg-blauw text-white border-blauw'
               : 'bg-white text-grijs border-lijn hover:border-blauw hover:text-blauw'
           }`}>
-          {exportMode ? 'Selectiemodus aan' : 'Exporteer gemeenten'}
+          {exportMode
+            ? `Selectiemodus (${exportSelected.size})`
+            : 'Exporteer gemeenten'}
         </button>
       </div>
 
-      {/* Main — map left, sidebar right */}
+      {/* Main — map + optional sidebar */}
       <main className="flex-1 overflow-hidden flex">
         <div className={`h-full relative transition-all duration-300 ${geselecteerd ? 'w-[60%]' : 'w-full'}`}>
           <NLMap
@@ -88,10 +94,9 @@ export default function App() {
             zoek={zoek}
             onSelect={handleSelect}
             exportMode={exportMode}
-            exportSelected={exportSelected}
+            exportSelected={exportSelectedCodes}
           />
         </div>
-
         {geselecteerd && (
           <div className="w-[40%] h-full flex-shrink-0 overflow-hidden">
             <Sidebar g={geselecteerd} onClose={() => setGeselecteerd(null)} />
@@ -101,9 +106,8 @@ export default function App() {
 
       {exportMode && (
         <ExportPanel
-          gemeenten={alle}
           selected={exportSelected}
-          onClear={() => setExportSelected(new Set())}
+          onClear={() => setExportSelected(new Map())}
         />
       )}
     </div>
