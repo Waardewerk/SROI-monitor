@@ -1,36 +1,30 @@
-
+import { Mail, Phone } from 'lucide-react';
 import type { GemeenteInfo } from '../../types';
 
 export default function SuccessenTab({ g }: { g: GemeenteInfo }) {
   return (
-    <div className="p-4 space-y-4">
-      {/* Instellingen */}
-      {g.instellingen.length > 0 && (
-        <div>
-          <p className="text-xs font-semibold text-blauw mb-2">Uitvoerende instellingen</p>
-          <div className="flex flex-wrap gap-2">
-            {g.instellingen.map((inst, i) => (
-              <span key={i} className="bg-bg-alt text-blauw text-xs px-3 py-1.5 rounded-full border border-lijn">
-                {inst}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className="space-y-4">
 
       {/* Contactpersonen */}
       {g.contactpersonen && g.contactpersonen.length > 0 && (
         <div className="space-y-2">
           <p className="text-xs font-semibold text-blauw">Contactpersonen</p>
           {g.contactpersonen.map((cp, i) => (
-            <div key={i} className="bg-bg-alt rounded-xl p-3 flex justify-between items-center">
-              <div>
-                <p className="text-sm font-medium text-blauw">{cp.naam}</p>
-                {cp.regio && <p className="text-xs text-grijs">{cp.regio}</p>}
+            <div key={i} className="bg-bg-alt rounded-xl p-3 space-y-0.5">
+              <p className="text-sm font-medium text-blauw">{cp.naam}</p>
+              {cp.regio && <p className="text-xs text-grijs">{cp.regio}</p>}
+              <div className="flex flex-wrap gap-3 pt-0.5">
+                {cp.telefoon && (
+                  <a href={`tel:${cp.telefoon}`} className="flex items-center gap-1.5 text-xs text-magenta hover:underline">
+                    <Phone className="w-3 h-3" />{cp.telefoon}
+                  </a>
+                )}
+                {cp.email && (
+                  <a href={`mailto:${cp.email}`} className="flex items-center gap-1.5 text-xs text-magenta hover:underline">
+                    <Mail className="w-3 h-3" />{cp.email}
+                  </a>
+                )}
               </div>
-              <a href={`tel:${cp.telefoon}`} className="text-sm text-magenta hover:underline font-medium">
-                {cp.telefoon}
-              </a>
             </div>
           ))}
         </div>
@@ -49,18 +43,8 @@ export default function SuccessenTab({ g }: { g: GemeenteInfo }) {
         </div>
       )}
 
-      {/* Beleidsdocument */}
-      {g.sroi.beleidsdocumentUrl && (
-        <a href={g.sroi.beleidsdocumentUrl} target="_blank" rel="noopener noreferrer"
-           className="block text-xs text-magenta hover:underline">
-          Bekijk gemeentelijk SROI-beleid →
-        </a>
-      )}
-
-      {!g.isSeeded && (
-        <p className="text-xs text-grijs italic">
-          Succesverhalen en contactinfo volgen zodra deze gemeente volledig is ingevuld.
-        </p>
+      {!g.contactpersonen?.length && !g.succesverhalen?.length && (
+        <p className="text-xs text-grijs italic">Geen contactpersonen of succesverhalen beschikbaar.</p>
       )}
     </div>
   );

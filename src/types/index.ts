@@ -9,7 +9,8 @@ export interface BouwblokWaarde {
 
 export interface ContactPersoon {
   naam: string;
-  telefoon: string;
+  telefoon?: string;
+  email?: string;
   regio?: string;
 }
 

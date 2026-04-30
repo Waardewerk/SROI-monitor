@@ -8,14 +8,18 @@ export const seededGemeenten: GemeenteInfo[] = [
     werkloosheid: 9.1, bijstand: 28400, buigBudget: 485000000, reintegratiebudget: 42000000,
     sroi: { pct: 5, status: 'Verplicht', drempel: 250000, aanbestedingsvolume: 2400000000, monitoring: 'Kwartaal', beleidsdocumentUrl: 'https://www.rotterdam.nl/werken-leren/sroi/' },
     doelgroepen: { bijstand: { n: 28400, bereikbaarheid: 88 }, nuggers: { n: 9200, bereikbaarheid: 62 }, statushouders: { n: 4100, bereikbaarheid: 45 }, vsv: { n: 1850, bereikbaarheid: 30 }, arbeidsbeperkt: { n: 6300, bereikbaarheid: 55 }, ouderen55plus: { n: 3700, bereikbaarheid: 38 } },
-    instellingen: ['WSP Rijnmond', 'Stichting Mens en Verkeer', 'Stroomopwaarts MVS'], isSeeded: true,
+    instellingen: ['WSP Rijnmond', 'Stichting Mens en Verkeer', 'Stroomopwaarts MVS'],
+    contactpersonen: [{ naam: 'Loket Social Return', telefoon: '010-7008989', email: 'socialreturn@rotterdam.nl', regio: 'Rotterdam' }],
+    isSeeded: true,
   },
   {
     naam: 'Amsterdam', gmCode: 'GM0363', provincie: 'Noord-Holland',
     werkloosheid: 6.8, bijstand: 31200, buigBudget: 538000000, reintegratiebudget: 58000000,
     sroi: { pct: 5, status: 'Verplicht', drempel: 250000, aanbestedingsvolume: 3100000000, monitoring: 'Kwartaal', beleidsdocumentUrl: 'https://www.amsterdam.nl/werk-inkomen/sroi/' },
     doelgroepen: { bijstand: { n: 31200, bereikbaarheid: 90 }, nuggers: { n: 11000, bereikbaarheid: 65 }, statushouders: { n: 5800, bereikbaarheid: 52 }, vsv: { n: 2400, bereikbaarheid: 35 }, arbeidsbeperkt: { n: 7100, bereikbaarheid: 58 }, ouderen55plus: { n: 4200, bereikbaarheid: 42 } },
-    instellingen: ['Amsterdam Werkt', 'UWV Amsterdam', 'Pantar'], isSeeded: true,
+    instellingen: ['Amsterdam Werkt', 'UWV Amsterdam', 'Pantar'],
+    contactpersonen: [{ naam: 'Bureau Social Return Amsterdam', telefoon: '020-2625427', email: 'info@bureausocialreturn.nl', regio: 'Amsterdam' }],
+    isSeeded: true,
   },
 
   // ── Utrecht ──
@@ -31,6 +35,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     },
     doelgroepen: { bijstand: { n: 9800, bereikbaarheid: 55 }, nuggers: { n: 3100, bereikbaarheid: 38 }, statushouders: { n: 1900, bereikbaarheid: 35 }, vsv: { n: 780, bereikbaarheid: 20 }, arbeidsbeperkt: { n: 2900, bereikbaarheid: 44 }, ouderen55plus: { n: 1600, bereikbaarheid: 28 } },
     instellingen: ['Werk & Inkomen Utrecht', 'WSP Midden-Utrecht', 'Ferm Werk'],
+    contactpersonen: [{ naam: 'Werk & Inkomen Utrecht', email: 'socialreturn@utrecht.nl', regio: 'Utrecht' }],
     bouwblokwaarden: [
       // Banen & leerwerkplekken (jaarcontract 36 uur)
       { sectie: 'Banen & leerwerkplekken', label: 'Participatiewet', waarde: '€ 40.000 (jaarcontract 36 uur/week)' },
@@ -67,6 +72,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     },
     doelgroepen: { bijstand: { n: 11400, bereikbaarheid: 72 }, nuggers: { n: 3800, bereikbaarheid: 55 }, statushouders: { n: 2200, bereikbaarheid: 40 }, vsv: { n: 1100, bereikbaarheid: 38 }, arbeidsbeperkt: { n: 3100, bereikbaarheid: 60 }, ouderen55plus: { n: 2600, bereikbaarheid: 52 } },
     instellingen: ['Coördinatiepunt SR / Werk in Zicht', 'UWV Groningen', 'Ability'],
+    contactpersonen: [{ naam: 'Coördinatiepunt Social Return / Werk in Zicht', email: 'SocialReturn@werkinzicht.nl', regio: 'Groningen' }],
     bouwblokwaarden: [
       { sectie: 'Maatwerk-activiteiten', label: 'Werkervaringsplaats', waarde: '€ 75/uur, max 10 uur/week, max 3 mnd' },
       { sectie: 'Maatwerk-activiteiten', label: 'Taalstage', waarde: '€ 75/uur, max 10 uur/week, max 3 mnd' },
@@ -109,14 +115,18 @@ export const seededGemeenten: GemeenteInfo[] = [
     werkloosheid: 5.4, bijstand: 9200, buigBudget: 158000000, reintegratiebudget: 16000000,
     sroi: { pct: 5, status: 'Verplicht', drempel: 250000, aanbestedingsvolume: 680000000, monitoring: 'Jaarlijks' },
     doelgroepen: { bijstand: { n: 9200, bereikbaarheid: 60 }, nuggers: { n: 3000, bereikbaarheid: 40 }, statushouders: { n: 1500, bereikbaarheid: 32 }, vsv: { n: 850, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 2400, bereikbaarheid: 42 }, ouderen55plus: { n: 1800, bereikbaarheid: 35 } },
-    instellingen: ['WSP Zuidoost-Brabant', 'IW4', 'UWV Eindhoven'], isSeeded: true,
+    instellingen: ['WSP Zuidoost-Brabant', 'IW4', 'UWV Eindhoven'],
+    contactpersonen: [{ naam: 'Team Social Return Eindhoven', email: 'socialreturn@eindhoven.nl', regio: 'Eindhoven' }],
+    isSeeded: true,
   },
   {
     naam: "'s-Hertogenbosch", gmCode: 'GM0796', provincie: 'Noord-Brabant',
     werkloosheid: 4.7, bijstand: 6100, buigBudget: 98000000, reintegratiebudget: 11000000,
     sroi: { pct: 5, status: 'Actief beleid', drempel: 250000, aanbestedingsvolume: 410000000, monitoring: 'Jaarlijks' },
     doelgroepen: { bijstand: { n: 6100, bereikbaarheid: 50 }, nuggers: { n: 2000, bereikbaarheid: 35 }, statushouders: { n: 820, bereikbaarheid: 28 }, vsv: { n: 410, bereikbaarheid: 18 }, arbeidsbeperkt: { n: 1800, bereikbaarheid: 40 }, ouderen55plus: { n: 1100, bereikbaarheid: 30 } },
-    instellingen: ['Baanbrekers', 'WSP Midden-Brabant', 'UWV Den Bosch'], isSeeded: true,
+    instellingen: ['Baanbrekers', 'WSP Midden-Brabant', 'UWV Den Bosch'],
+    contactpersonen: [{ naam: 'Gemeente \u2019s-Hertogenbosch', telefoon: '14073', email: 'socialreturn@s-hertogenbosch.nl', regio: "'s-Hertogenbosch" }],
+    isSeeded: true,
   },
 
   // ── ESR / WIZZR regio ──
