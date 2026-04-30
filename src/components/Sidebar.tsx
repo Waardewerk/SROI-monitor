@@ -88,10 +88,10 @@ export default function Sidebar({ g, onClose }: Props) {
       <div className="flex-shrink-0 border-t border-lijn p-4 bg-bg-alt">
         <p className="text-xs font-semibold text-blauw mb-1">Hulp nodig bij SROI in {g.naam}?</p>
         <p className="text-xs text-grijs mb-3">Waardewerk helpt aannemers en gemeenten met social return implementatie.</p>
-        <a href="tel:+31850601800"
+        <a href="tel:+31657448298"
           className="flex items-center justify-center gap-2 w-full bg-magenta text-white text-sm font-medium py-2.5 rounded-xl hover:bg-magenta/90 transition-colors">
           <Phone className="w-4 h-4" />
-          Bel ons: 085 060 1800
+          Bel ons: 06 57 44 82 98
         </a>
       </div>
     </div>
