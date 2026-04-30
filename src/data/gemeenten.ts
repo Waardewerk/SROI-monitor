@@ -122,10 +122,44 @@ export const seededGemeenten: GemeenteInfo[] = [
   {
     naam: "'s-Hertogenbosch", gmCode: 'GM0796', provincie: 'Noord-Brabant',
     werkloosheid: 4.7, bijstand: 6100, buigBudget: 98000000, reintegratiebudget: 11000000,
-    sroi: { pct: 5, status: 'Actief beleid', drempel: 250000, aanbestedingsvolume: 410000000, monitoring: 'Jaarlijks' },
+    sroi: {
+      pct: 5, status: 'Verplicht', drempel: 221000, aanbestedingsvolume: 410000000,
+      monitoring: 'Doorlopend', methode: 'Normbedragen (Noordoost-Brabant 2025)',
+      uitvoerder: 'Coördinator Social Return gemeente \'s-Hertogenbosch',
+      registratiesysteem: 'WIZZR',
+      beleidsdocumentUrl: 'https://lokaleregelgeving.overheid.nl/CVDR727772/1',
+    },
     doelgroepen: { bijstand: { n: 6100, bereikbaarheid: 50 }, nuggers: { n: 2000, bereikbaarheid: 35 }, statushouders: { n: 820, bereikbaarheid: 28 }, vsv: { n: 410, bereikbaarheid: 18 }, arbeidsbeperkt: { n: 1800, bereikbaarheid: 40 }, ouderen55plus: { n: 1100, bereikbaarheid: 30 } },
-    instellingen: ['Baanbrekers', 'WSP Midden-Brabant', 'UWV Den Bosch'],
-    contactpersonen: [{ naam: 'Gemeente \u2019s-Hertogenbosch', telefoon: '14073', email: 'socialreturn@s-hertogenbosch.nl', regio: "'s-Hertogenbosch" }],
+    instellingen: ['Baanbrekers', 'WSD', 'IBN', 'WSP Noordoost-Brabant', 'UWV Den Bosch'],
+    contactpersonen: [{ naam: 'Coördinator Social Return', telefoon: '14073', regio: "Arbeidsmarktregio Noordoost-Brabant" }],
+    bouwblokwaarden: [
+      // Doelgroepen — jaartarief fulltime + uurtarief inleen
+      { sectie: 'Doelgroepen', label: 'Participatiewet / IOAW / IOAZ', waarde: '€ 45.000/jaar (fulltime) | € 24/uur (inleen)' },
+      { sectie: 'Doelgroepen', label: 'Niet-uitkeringsgerechtigde (NUG)', waarde: '€ 45.000/jaar (fulltime) | € 24/uur (inleen)' },
+      { sectie: 'Doelgroepen', label: 'WIA / WAO / WAZ / Wajong', waarde: '€ 45.000/jaar (fulltime) | € 24/uur (inleen)' },
+      { sectie: 'Doelgroepen', label: 'WSW / indicatie beschut werk', waarde: '€ 45.000/jaar (fulltime) | € 24/uur (inleen)' },
+      { sectie: 'Doelgroepen', label: 'Geregistreerd in doelgroepregister UWV', waarde: '€ 45.000/jaar (fulltime) | € 24/uur (inleen)' },
+      { sectie: 'Doelgroepen', label: 'WW-uitkering ≥ 6 maanden', waarde: '€ 30.000/jaar (fulltime) | € 16/uur (inleen)' },
+      // Leren
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 + 2', waarde: '€ 20.000/jaar | € 11/uur' },
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 + 2', waarde: '€ 5.000/jaar | € 3/uur' },
+      { sectie: 'Leren', label: 'Leerling VSO / Praktijkonderwijs', waarde: '€ 10.000/jaar | € 5/uur' },
+      // Bonussen (eenmalig)
+      { sectie: 'Bonussen', label: 'Bonus leeftijd 50–54 jaar', waarde: '€ 5.000 eenmalig' },
+      { sectie: 'Bonussen', label: 'Bonus leeftijd 55 jaar of ouder', waarde: '€ 10.000 eenmalig' },
+      // Maatschappelijke meerwaarde
+      { sectie: 'Maatschappelijke meerwaarde', label: 'Gastlessen over bedrijf / branche / sector', waarde: '€ 100/uur (max 2 uur per les, excl. voorbereiding en reistijd)' },
+      { sectie: 'Maatschappelijke meerwaarde', label: 'Bedrijfsbezoek', waarde: '€ 100/uur (max 4 uur per bezoek, excl. voorbereiding en reistijd)' },
+      { sectie: 'Maatschappelijke meerwaarde', label: 'Activiteiten onderliggende problematiek doelgroep', waarde: '€ 100/uur of factuur (max 4 uur per activiteit; vooraf akkoord coördinator)' },
+      { sectie: 'Maatschappelijke meerwaarde', label: 'Begeleiding re-integratie- of werkervaringstraject', waarde: 'Max 2 uur/week × € 100/uur' },
+      // Arbeidsontwikkeling
+      { sectie: 'Arbeidsontwikkeling', label: 'Scholing / om-, her- en bijscholing van doelgroepkandidaten', waarde: 'Factuurkosten excl. BTW (vooraf akkoord coördinator)' },
+      // PSO-staffel
+      { sectie: 'PSO-gecertificeerd inkopen', label: 'PSO trede 1', waarde: '10% van factuur excl. BTW' },
+      { sectie: 'PSO-gecertificeerd inkopen', label: 'PSO trede 2', waarde: '20% van factuur excl. BTW | trede 2+ = volledige vrijstelling SR (max 5%)' },
+      { sectie: 'PSO-gecertificeerd inkopen', label: 'PSO trede 3', waarde: '30% van factuur excl. BTW | trede 2+ = volledige vrijstelling SR (max 5%)' },
+      { sectie: 'PSO-gecertificeerd inkopen', label: 'PSO 30+ certificering / sociale onderneming', waarde: '100% van factuur excl. BTW' },
+    ],
     isSeeded: true,
   },
 
