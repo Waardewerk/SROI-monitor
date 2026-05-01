@@ -38,6 +38,17 @@ export default function SuccessenTab({ g }: { g: GemeenteInfo }) {
             <div key={i} className="rounded-xl border border-lijn p-3 bg-bg-alt">
               <p className="text-xs font-semibold text-blauw mb-1">{s.titel}</p>
               <p className="text-xs text-grijs leading-relaxed">{s.tekst}</p>
+              {(s.url || s.bron || s.datum) && (
+                <div className="flex flex-wrap items-center gap-2 mt-2">
+                  {s.datum && <span className="text-xs text-grijs">{s.datum}</span>}
+                  {s.bron && !s.url && <span className="text-xs text-grijs italic">{s.bron}</span>}
+                  {s.url && (
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-magenta hover:underline">
+                      {s.bron || 'Lees meer'} ↗
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>

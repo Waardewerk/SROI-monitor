@@ -17,6 +17,9 @@ export interface ContactPersoon {
 export interface Succesverhaal {
   titel: string;
   tekst: string;
+  bron?: string;
+  url?: string;
+  datum?: string;
 }
 
 export interface DoelgroepInfo {
