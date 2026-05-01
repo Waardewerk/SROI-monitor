@@ -887,10 +887,52 @@ export const seededGemeenten: GemeenteInfo[] = [
   {
     naam: 'Zwolle', gmCode: 'GM0193', provincie: 'Overijssel',
     werkloosheid: 5.8, bijstand: 4200, buigBudget: 75600000, reintegratiebudget: 6804000,
-    sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000 },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 4200, bereikbaarheid: 55 }, nuggers: { n: 1470, bereikbaarheid: 40 }, statushouders: { n: 504, bereikbaarheid: 35 }, vsv: { n: 336, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 840, bereikbaarheid: 45 }, ouderen55plus: { n: 630, bereikbaarheid: 30 } },
-    instellingen: [],
-    contactpersonen: [{ naam: 'Expertisecentrum SROI — Henk de Leeuw', telefoon: '06-52803575', email: 'socialreturn@zwolle.nl', regio: 'Zwolle (IJsselvecht)' }],
+    instellingen: ['Expertisecentrum Social Return (ESR)'],
+    contactpersonen: [{ naam: 'Henk de Leeuw', telefoon: '06-52803575', email: 'socialreturn@zwolle.nl', regio: 'Zwolle (IJsselvecht)' }],
+    bouwblokwaarden: [
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
+      // Sociaal inkopen
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
+      // Bonussen
+      { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
+      { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
+      { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
+      // PSO-ladder
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan."',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
