@@ -167,129 +167,126 @@ export const seededGemeenten: GemeenteInfo[] = [
   {
     naam: 'Apeldoorn', gmCode: 'GM0200', provincie: 'Gelderland',
     werkloosheid: 5.0, bijstand: 3670, buigBudget: 66000000, reintegratiebudget: 6000000,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 3670, bereikbaarheid: 60 }, nuggers: { n: 1280, bereikbaarheid: 42 }, statushouders: { n: 440, bereikbaarheid: 35 }, vsv: { n: 290, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 734, bereikbaarheid: 45 }, ouderen55plus: { n: 550, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Robyn Bruggeman', telefoon: '06-81926136', regio: 'Apeldoorn' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Deventer', gmCode: 'GM0150', provincie: 'Overijssel',
     werkloosheid: 5.8, bijstand: 2990, buigBudget: 53820000, reintegratiebudget: 4844000,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 2990, bereikbaarheid: 60 }, nuggers: { n: 1047, bereikbaarheid: 42 }, statushouders: { n: 359, bereikbaarheid: 35 }, vsv: { n: 239, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 598, bereikbaarheid: 45 }, ouderen55plus: { n: 449, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Maarten Waalkens', telefoon: '06-31276815', regio: 'Deventer / Voorst' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Zutphen', gmCode: 'GM0301', provincie: 'Gelderland',
     werkloosheid: 6.2, bijstand: 1570, buigBudget: 28260000, reintegratiebudget: 2543000,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 1570, bereikbaarheid: 62 }, nuggers: { n: 550, bereikbaarheid: 44 }, statushouders: { n: 188, bereikbaarheid: 36 }, vsv: { n: 126, bereikbaarheid: 23 }, arbeidsbeperkt: { n: 314, bereikbaarheid: 46 }, ouderen55plus: { n: 236, bereikbaarheid: 32 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Sanne Schaap', telefoon: '06-51984364', regio: 'Zutphen / Lochem / Brummen' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
@@ -385,387 +382,378 @@ export const seededGemeenten: GemeenteInfo[] = [
   {
     naam: 'Brummen', gmCode: 'GM0310', provincie: 'Gelderland',
     bijstand: 380, buigBudget: 6840000, reintegratiebudget: 615600,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 380, bereikbaarheid: 58 }, nuggers: { n: 133, bereikbaarheid: 42 }, statushouders: { n: 46, bereikbaarheid: 35 }, vsv: { n: 30, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 76, bereikbaarheid: 45 }, ouderen55plus: { n: 57, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Sanne Schaap', telefoon: '06-51984364', regio: 'Zutphen / Lochem / Brummen' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Epe', gmCode: 'GM0232', provincie: 'Gelderland',
     bijstand: 640, buigBudget: 11520000, reintegratiebudget: 1036800,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 640, bereikbaarheid: 58 }, nuggers: { n: 224, bereikbaarheid: 42 }, statushouders: { n: 77, bereikbaarheid: 35 }, vsv: { n: 51, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 128, bereikbaarheid: 45 }, ouderen55plus: { n: 96, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Heerde', gmCode: 'GM0246', provincie: 'Gelderland',
     bijstand: 320, buigBudget: 5760000, reintegratiebudget: 518400,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 320, bereikbaarheid: 58 }, nuggers: { n: 112, bereikbaarheid: 42 }, statushouders: { n: 38, bereikbaarheid: 35 }, vsv: { n: 26, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 64, bereikbaarheid: 45 }, ouderen55plus: { n: 48, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Ermelo', gmCode: 'GM0233', provincie: 'Gelderland',
     bijstand: 490, buigBudget: 8820000, reintegratiebudget: 793800,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 490, bereikbaarheid: 58 }, nuggers: { n: 172, bereikbaarheid: 42 }, statushouders: { n: 59, bereikbaarheid: 35 }, vsv: { n: 39, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 98, bereikbaarheid: 45 }, ouderen55plus: { n: 74, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Harderwijk', gmCode: 'GM0243', provincie: 'Gelderland',
     bijstand: 1380, buigBudget: 24840000, reintegratiebudget: 2235600,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 1380, bereikbaarheid: 58 }, nuggers: { n: 483, bereikbaarheid: 42 }, statushouders: { n: 166, bereikbaarheid: 35 }, vsv: { n: 110, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 276, bereikbaarheid: 45 }, ouderen55plus: { n: 207, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Lochem', gmCode: 'GM0262', provincie: 'Gelderland',
     bijstand: 580, buigBudget: 10440000, reintegratiebudget: 939600,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 580, bereikbaarheid: 58 }, nuggers: { n: 203, bereikbaarheid: 42 }, statushouders: { n: 70, bereikbaarheid: 35 }, vsv: { n: 46, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 116, bereikbaarheid: 45 }, ouderen55plus: { n: 87, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Sanne Schaap', telefoon: '06-51984364', regio: 'Zutphen / Lochem / Brummen' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Putten', gmCode: 'GM0273', provincie: 'Gelderland',
     bijstand: 350, buigBudget: 6300000, reintegratiebudget: 567000,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 350, bereikbaarheid: 58 }, nuggers: { n: 122, bereikbaarheid: 42 }, statushouders: { n: 42, bereikbaarheid: 35 }, vsv: { n: 28, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 70, bereikbaarheid: 45 }, ouderen55plus: { n: 52, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Voorst', gmCode: 'GM0285', provincie: 'Gelderland',
     bijstand: 350, buigBudget: 6300000, reintegratiebudget: 567000,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 350, bereikbaarheid: 58 }, nuggers: { n: 122, bereikbaarheid: 42 }, statushouders: { n: 42, bereikbaarheid: 35 }, vsv: { n: 28, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 70, bereikbaarheid: 45 }, ouderen55plus: { n: 52, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Maarten Waalkens', telefoon: '06-31276815', regio: 'Deventer / Voorst' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   },
   {
     naam: 'Zeewolde', gmCode: 'GM0050', provincie: 'Flevoland',
     bijstand: 380, buigBudget: 6840000, reintegratiebudget: 615600,
-    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2023)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
     doelgroepen: { bijstand: { n: 380, bereikbaarheid: 58 }, nuggers: { n: 133, bereikbaarheid: 42 }, statushouders: { n: 46, bereikbaarheid: 35 }, vsv: { n: 30, bereikbaarheid: 22 }, arbeidsbeperkt: { n: 76, bereikbaarheid: 45 }, ouderen55plus: { n: 57, bereikbaarheid: 30 } },
     instellingen: ['Expertisecentrum Social Return (ESR)'],
     contactpersonen: [{ naam: 'Anouk Boonen', telefoon: '06-32452948', regio: 'Noord-West Veluwe / Epe / Heerde' }],
     bouwblokwaarden: [
-      // Participatiewet
-      { sectie: 'Werken', label: 'Participatiewet < 2 jaar', waarde: '€ 30.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet > 2 jaar', waarde: '€ 40.000/jaar (max 2 jr)' },
-      { sectie: 'Werken', label: 'Participatiewet/Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 40.000/jaar (altijd)' },
-      // WW & NUG
-      { sectie: 'Werken', label: 'WW-uitkering < 1 jaar', waarde: '€ 10.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'WW-uitkering > 1 jaar', waarde: '€ 15.000/jaar (max 1 jr)' },
-      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 10.000/jaar (max 1 jr)' },
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
       { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
-      // Leren BBL
-      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 20.000/leerwerkjaar (naar rato)' },
-      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar (naar rato)' },
-      // Leren BOL / stages
-      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 7.500 (stageperiode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
       { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Leerling Pro/VSO onderwijs', waarde: '€ 5.000 (stageperiode)' },
-      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs (< 18 jr)', waarde: '€ 25.000 eenmalig' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
       // Sociaal inkopen
-      { sectie: 'Sociaal inkopen', label: 'WSW / Detachering / Beschut Werk / Sociale Inkoop', waarde: 'Factuurwaarde excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 1', waarde: '10% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 2', waarde: '20% van factuur excl. BTW' },
-      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerd trede 3-30+', waarde: '30% van factuur excl. BTW' },
-      // MVO
-      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 100/uur of factuurwaarde excl. BTW (in overleg)' },
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
       // Bonussen
       { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
       { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
       { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
-      // PSO-korting
+      // PSO-ladder
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
-      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt (alleen Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
     isSeeded: true,
   }
