@@ -207,7 +207,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -258,7 +258,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -309,7 +309,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -449,7 +449,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -500,7 +500,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -551,7 +551,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -602,7 +602,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -653,7 +653,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -704,7 +704,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -755,7 +755,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -806,7 +806,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',
@@ -857,7 +857,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     succesverhalen: [
       {
         titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
-        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
         bron: 'ESR / impactoost.nl',
         url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
         datum: '22-04-2024',

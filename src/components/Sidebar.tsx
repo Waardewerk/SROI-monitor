@@ -6,9 +6,10 @@ import { STATUS_COLOR } from '../types';
 import DoelgroepenTab from './tabs/DoelgroepenTab';
 import SROIRegelsTab from './tabs/SROIRegelsTab';
 import SubsidieTab from './tabs/SubsidieTab';
+import ContactTab from './tabs/ContactTab';
 import SuccessenTab from './tabs/SuccessenTab';
 
-type Tab = 'doelgroepen' | 'sroi' | 'subsidie' | 'netwerk';
+type Tab = 'doelgroepen' | 'sroi' | 'subsidie' | 'contact' | 'cases';
 
 interface Props {
   g: GemeenteInfo;
@@ -22,7 +23,8 @@ export default function Sidebar({ g, onClose }: Props) {
     { id: 'doelgroepen', label: 'Doelgroepen' },
     { id: 'sroi',        label: 'SROI-regels' },
     { id: 'subsidie',    label: 'Subsidie' },
-    { id: 'netwerk',     label: 'Netwerk' },
+    { id: 'contact',     label: 'Contact' },
+    { id: 'cases',       label: 'Cases' },
   ];
 
   const drempelLabel = g.sroi.drempel
@@ -81,7 +83,8 @@ export default function Sidebar({ g, onClose }: Props) {
         {tab === 'doelgroepen' && <DoelgroepenTab g={g} />}
         {tab === 'sroi'        && <SROIRegelsTab  g={g} />}
         {tab === 'subsidie'    && <SubsidieTab    g={g} />}
-        {tab === 'netwerk'     && <SuccessenTab   g={g} />}
+        {tab === 'contact'     && <ContactTab     g={g} />}
+        {tab === 'cases'       && <SuccessenTab   g={g} />}
       </div>
 
       {/* Bottom CTA */}
