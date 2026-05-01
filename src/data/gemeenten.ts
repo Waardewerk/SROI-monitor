@@ -204,6 +204,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -246,6 +255,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -287,6 +305,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
     ],
     isSeeded: true,
   },
@@ -419,6 +446,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -460,6 +496,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
     ],
     isSeeded: true,
   },
@@ -503,6 +548,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -544,6 +598,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
     ],
     isSeeded: true,
   },
@@ -587,6 +650,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -628,6 +700,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
     ],
     isSeeded: true,
   },
@@ -671,6 +752,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -713,6 +803,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -754,6 +853,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
       // Werkpakt (alleen Twente)
       { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland, werkt al meer dan acht jaar samen met Laborijn. Veel van hun verkeersregelaars hebben een afstand tot de arbeidsmarkt — vanuit de Participatiewet, de WIA of de vroegere Wajong. "Wij vinden het heel dankbaar werk om iemand in het zadel te helpen. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan." Medewerkers worden via Laborijn aangedragen en doorlopen een opleiding aan de eigen Globe Academy.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
     ],
     isSeeded: true,
   }
