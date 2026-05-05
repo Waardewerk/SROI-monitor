@@ -997,7 +997,160 @@ export const seededGemeenten: GemeenteInfo[] = [
     instellingen: [],
     contactpersonen: [{ naam: 'Coördinator Social Return', email: 'socialreturn@haarlemmermeer.nl', regio: 'Haarlemmermeer' }],
     isSeeded: true,
-  }
+  },
+  {
+    naam: 'Enschede', gmCode: 'GM0153', provincie: 'Overijssel',
+    werkloosheid: 8.2, bijstand: 10200, buigBudget: 183600000, reintegratiebudget: 16524000,
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    doelgroepen: { bijstand: { n: 10200, bereikbaarheid: 60 }, nuggers: { n: 3570, bereikbaarheid: 42 }, statushouders: { n: 1224, bereikbaarheid: 35 }, vsv: { n: 816, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 2040, bereikbaarheid: 45 }, ouderen55plus: { n: 1530, bereikbaarheid: 30 } },
+    instellingen: ['Expertisecentrum Social Return (ESR)'],
+    contactpersonen: [{ naam: 'SROI-adviseur ESR (via ROZ)', email: 'info@roz.nl', regio: 'Enschede (Twente)' }],
+    bouwblokwaarden: [
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
+      // Sociaal inkopen
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
+      // Bonussen
+      { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
+      { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
+      { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
+      // PSO-ladder
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt keurmerk (Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
+    isSeeded: true,
+  },
+  {
+    naam: 'Almelo', gmCode: 'GM0141', provincie: 'Overijssel',
+    werkloosheid: 7.8, bijstand: 5400, buigBudget: 97200000, reintegratiebudget: 8748000,
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    doelgroepen: { bijstand: { n: 5400, bereikbaarheid: 58 }, nuggers: { n: 1890, bereikbaarheid: 42 }, statushouders: { n: 648, bereikbaarheid: 35 }, vsv: { n: 432, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 1080, bereikbaarheid: 45 }, ouderen55plus: { n: 810, bereikbaarheid: 30 } },
+    instellingen: ['Expertisecentrum Social Return (ESR)'],
+    contactpersonen: [{ naam: 'SROI-adviseur ESR (via ROZ)', email: 'info@roz.nl', regio: 'Almelo (Twente)' }],
+    bouwblokwaarden: [
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
+      // Sociaal inkopen
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
+      // Bonussen
+      { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
+      { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
+      { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
+      // PSO-ladder
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt keurmerk (Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
+    isSeeded: true,
+  },
+  {
+    naam: 'Hengelo', gmCode: 'GM0164', provincie: 'Overijssel',
+    werkloosheid: 6.4, bijstand: 4100, buigBudget: 73800000, reintegratiebudget: 6642000,
+    sroi: { pct: 5, status: 'Verplicht', drempel: 250000, monitoring: 'Kwartaal', methode: 'Bouwblokken (Oost NL 2026)', uitvoerder: 'Expertisecentrum Social Return (ESR)', registratiesysteem: 'WIZZR' },
+    doelgroepen: { bijstand: { n: 4100, bereikbaarheid: 58 }, nuggers: { n: 1435, bereikbaarheid: 42 }, statushouders: { n: 492, bereikbaarheid: 35 }, vsv: { n: 328, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 820, bereikbaarheid: 45 }, ouderen55plus: { n: 615, bereikbaarheid: 30 } },
+    instellingen: ['Expertisecentrum Social Return (ESR)'],
+    contactpersonen: [{ naam: 'SROI-adviseur ESR (via ROZ)', email: 'info@roz.nl', regio: 'Hengelo (Twente)' }],
+    bouwblokwaarden: [
+      // Werken – Participatiewet
+      { sectie: 'Werken', label: 'Participatiewet', waarde: '€ 45.000/jaar (max 2 jr)' },
+      { sectie: 'Werken', label: 'Participatiewet en Wajong (doelgroepregister) / WIA/WAO / WSW / Beschut Werk', waarde: '€ 50.000/jaar (altijd)' },
+      // Werken – WW & NUG
+      { sectie: 'Werken', label: 'WW', waarde: '€ 20.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'NUG (Niet-Uitkeringsgerechtigde)', waarde: '€ 15.000/jaar (max 1 jr)' },
+      { sectie: 'Werken', label: 'Werkervaringsplek / proefplaatsing', waarde: '€ 750/maand (afgesproken periode)' },
+      // Leren – BBL
+      { sectie: 'Leren', label: 'Leerling BBL niveau 1 en 2', waarde: '€ 25.000/leerwerkjaar' },
+      { sectie: 'Leren', label: 'Leerling BBL niveau 3 en 4', waarde: '€ 15.000/leerwerkjaar' },
+      // Leren – BOL/stages
+      { sectie: 'Leren', label: 'Leerling BOL niveau 1 en 2', waarde: '€ 10.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling BOL niveau 3 en 4', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Stage HBO/WO', waarde: '€ 5.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Leerling VSO/Praktijkonderwijs', waarde: '€ 15.000 (stageperiode)' },
+      { sectie: 'Leren', label: 'Werkplek na uitstroom VSO/Praktijkonderwijs', waarde: '€ 25.000 eenmalig' },
+      // Sociaal inkopen
+      { sectie: 'Sociaal inkopen', label: 'Sociale Inkoop (SW-bedrijf, Code Sociale Ondernemingen, PSO 30+)', waarde: 'Factuurwaarde excl. BTW' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 1 / 2 / 3', waarde: '10% / 20% / 30% van factuur excl. BTW (max 50% van verplichting)' },
+      { sectie: 'Sociaal inkopen', label: 'PSO-gecertificeerde bedrijven trede 3-30+', waarde: '100% van factuur excl. BTW' },
+      // MVO-activiteiten
+      { sectie: 'MVO-activiteiten', label: 'MVO-activiteiten (gastcollege, buddy, geldfit e.d.)', waarde: '€ 125/uur of factuurwaarde excl. BTW (in overleg)' },
+      // Bonussen
+      { sectie: 'Bonussen', label: 'Bonus leeftijd ≥ 50 jaar', waarde: '€ 5.000/jaar (binnen duur bouwblok)' },
+      { sectie: 'Bonussen', label: 'Bonus bijzondere doelgroep (statushouder, vluchteling e.d.)', waarde: '€ 5.000/jaar (in overleg met adviseur)' },
+      { sectie: 'Bonussen', label: 'Bonus vast dienstverband (onbepaalde tijd)', waarde: '€ 10.000 eenmalig' },
+      // PSO-ladder
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 1 / 2 / 3', waarde: 'Korting SROI-verplichting: 10% / 25% / 50%' },
+      { sectie: 'PSO-ladder', label: 'PSO-ladder trede 3-30+ / gemeente SW-bedrijf / Code Sociale Ondernemingen', waarde: 'Vrijstelling SROI-verplichting' },
+      // Werkpakt keurmerk (Twente)
+      { sectie: 'Werkpakt', label: 'Werkpakt keurmerk (alleen Twente)', waarde: '50% korting op SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Globe Group — mensen in het zadel helpen (Zelhem)',
+        tekst: 'Globe Group, het grootste beveiligingsbedrijf van Oost-Nederland (120 medewerkers, waaronder 60 beroepsverkeersregelaars), werkt al meer dan acht jaar samen met Laborijn. Veel medewerkers komen vanuit de Participatiewet, de WIA of de vroegere Wajong. Directeur Mirjam Roozegaarde: \'De accountmanagers van Laborijn weten precies wat voor type medewerker wij zoeken. Binnen een of hooguit twee jaar zie je als het ware een nieuwe persoon voor je staan, die zijn of haar leven prima op orde heeft gekregen.\' Medewerkers doorlopen een opleiding aan de eigen Globe Academy en zijn actief door de hele regio: van wegwerkzaamheden in Doetinchem tot begeleiding van de Nijmeegse Vierdaagse. Globe beveiligt alle dertien bedrijventerreinen in de Achterhoek.',
+        bron: 'ESR / impactoost.nl',
+        url: 'https://impactoost.nl/ondernemersverhalen/wij-vinden-het-heel-dankbaar-werk-om-mensen-in-het-zadel-te-helpen/',
+        datum: '22-04-2024',
+      },
+    ],
+    isSeeded: true,
+  },
 ];
 
 export const seededByGmCode = new Map<string, GemeenteInfo>(
