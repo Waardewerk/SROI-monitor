@@ -1189,3 +1189,70 @@ export const seededGemeenten: GemeenteInfo[] = [
 export const seededByGmCode = new Map<string, GemeenteInfo>(
   seededGemeenten.map((g) => [g.gmCode, g])
 );
+
+// ── Provincies ────────────────────────────────────────────────────────────────
+// Provincies zijn als aanbestedende overheid opgenomen met een PV-code.
+// Ze verschijnen niet op de gemeentekaart maar zijn selecteerbaar via de
+// "Provincies" knop in de toolbar.
+
+export const seededProvincies: GemeenteInfo[] = [
+  {
+    naam: 'Provincie Noord-Holland',
+    gmCode: 'PV27',
+    provincie: 'Noord-Holland',
+    bijstand: 0,
+    buigBudget: 0,
+    reintegratiebudget: 0,
+    sroi: {
+      pct: 5,
+      status: 'Provincie',
+      drempel: 150000,
+      uitvoerder: 'Team Social Return Provincie Noord-Holland',
+      registratiesysteem: 'WIZZR',
+      methode: 'Bouwblokken',
+      monitoring: 'Na gunning: plan van aanpak binnen 7 werkdagen',
+    },
+    doelgroepen: {
+      bijstand:       { n: 0, bereikbaarheid: 0 },
+      nuggers:        { n: 0, bereikbaarheid: 0 },
+      statushouders:  { n: 0, bereikbaarheid: 0 },
+      vsv:            { n: 0, bereikbaarheid: 0 },
+      arbeidsbeperkt: { n: 0, bereikbaarheid: 0 },
+      ouderen55plus:  { n: 0, bereikbaarheid: 0 },
+    },
+    instellingen: [],
+    contactpersonen: [
+      {
+        naam: 'Team Social Return Provincie Noord-Holland',
+        email: 'socialreturn@noord-holland.nl',
+      },
+    ],
+    bouwblokwaarden: [
+      { sectie: 'Arbeidsparticipatie', label: 'Participatiewet < 2 jaar', waarde: '€ 40.000/jaar (duur opdracht)' },
+      { sectie: 'Arbeidsparticipatie', label: 'Participatiewet > 2 jaar', waarde: '€ 45.000/jaar (duur opdracht)' },
+      { sectie: 'Arbeidsparticipatie', label: 'Doelgroepregister / Wajong / WSW / WIA/WAO', waarde: '€ 50.000/jaar (duur opdracht)' },
+      { sectie: 'Arbeidsparticipatie', label: 'WW < 1 jaar', waarde: '€ 20.000/jaar (3 jaar)' },
+      { sectie: 'Arbeidsparticipatie', label: 'WW > 1 jaar', waarde: '€ 30.000/jaar (3 jaar)' },
+      { sectie: 'Arbeidsparticipatie', label: 'NUG (niet-uitkeringsgerechtigde)', waarde: '€ 25.000/jaar (3 jaar)' },
+      { sectie: 'Leren', label: 'Leerling HBO/WO met arbeidsbeperking', waarde: '€ 10.000/jaar (duur opdracht)' },
+      { sectie: 'Leren', label: 'Leerling MBO BBL niveau 1 en 2', waarde: '€ 20.000 (opleidingsperiode, naar rato)' },
+      { sectie: 'Leren', label: 'Leerling MBO BBL niveau 3 en 4', waarde: '€ 15.000 (opleidingsperiode, naar rato)' },
+      { sectie: 'Leren', label: 'Leerling MBO BOL niveau 1 en 2', waarde: '€ 10.000 per stage (eenmalig)' },
+      { sectie: 'Leren', label: 'Leerling MBO BOL niveau 3 en 4', waarde: '€ 7.500 per stage (eenmalig)' },
+      { sectie: 'Leren', label: 'Leerling VSO / praktijkonderwijs', waarde: '€ 15.000 per stage (eenmalig)' },
+      { sectie: 'Extra (bonus)', label: 'Leeftijd 50+', waarde: '€ 5.000 eenmalig' },
+      { sectie: 'Extra (bonus)', label: 'Statushouder', waarde: '€ 15.000 eenmalig' },
+      { sectie: 'Extra (bonus)', label: 'Vast dienstverband', waarde: '€ 10.000 eenmalig' },
+      { sectie: 'Extra (bonus)', label: 'Aanvullende begeleidings- of opleidingskosten', waarde: '€ 250/uur of factuurwaarde (na akkoord team SR)' },
+      { sectie: 'Maatschappelijke inzet', label: 'Activiteiten gericht op arbeidsparticipatie (gastles, coaching, training)', waarde: '€ 250/uur' },
+      { sectie: 'Maatschappelijke inzet', label: 'Activiteiten gericht op armoedebestrijding, eenzaamheid, taal, schuldhulp', waarde: '€ 250/uur' },
+      { sectie: 'Maatschappelijke inzet', label: 'Sociale impact bijdrage (impactpakket/lidmaatschap)', waarde: 'Na akkoord team SR' },
+      { sectie: 'Sociaal inkopen', label: 'Bij sociale onderneming (>30% afstand, PSO 30+, SW-bedrijf of gelijkwaardig)', waarde: '100% factuurwaarde excl. BTW' },
+      { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '10% korting op SR-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '25% korting op SR-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO trede 3', waarde: '50% korting op SR-verplichting' },
+      { sectie: 'PSO-ladder', label: 'PSO 30+ of gelijkwaardig', waarde: 'Vrijstelling SR-verplichting' },
+    ],
+    isSeeded: true,
+  },
+];

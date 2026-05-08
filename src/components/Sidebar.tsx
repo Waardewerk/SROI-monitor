@@ -17,12 +17,15 @@ interface Props {
 }
 
 export default function Sidebar({ g, onClose }: Props) {
-  const [tab, setTab] = useState<Tab>('doelgroepen');
+  const isDefaultTab: Tab = g.gmCode.startsWith('PV') ? 'sroi' : 'doelgroepen';
+  const [tab, setTab] = useState<Tab>(isDefaultTab);
+
+  const isProvincie = g.gmCode.startsWith('PV');
 
   const tabs: { id: Tab; label: string }[] = [
-    { id: 'doelgroepen', label: 'Doelgroepen' },
+    ...(!isProvincie ? [{ id: 'doelgroepen' as Tab, label: 'Doelgroepen' }] : []),
     { id: 'sroi',        label: 'SROI-regels' },
-    { id: 'subsidie',    label: 'Subsidie' },
+    ...(!isProvincie ? [{ id: 'subsidie' as Tab, label: 'Subsidie' }] : []),
     { id: 'contact',     label: 'Contact' },
     { id: 'cases',       label: 'Cases' },
   ];
@@ -36,7 +39,7 @@ export default function Sidebar({ g, onClose }: Props) {
       {/* Header */}
       <div className="flex items-start justify-between px-4 pt-4 pb-3 border-b border-lijn flex-shrink-0">
         <div className="min-w-0 pr-2">
-          <p className="text-xs text-grijs uppercase tracking-wider font-medium">Gemeente profiel</p>
+          <p className="text-xs text-grijs uppercase tracking-wider font-medium">{g.gmCode.startsWith('PV') ? 'Provincie profiel' : 'Gemeente profiel'}</p>
           <h2 className="text-lg font-bold text-blauw leading-tight mt-0.5 truncate">{g.naam}</h2>
           <div className="flex items-center gap-2 mt-1">
             {g.provincie && <span className="text-xs text-grijs">{g.provincie}</span>}

@@ -1,5 +1,5 @@
 
-export type SROIStatus = 'Verplicht' | 'Actief' | 'Actief beleid' | 'In ontwikkeling';
+export type SROIStatus = 'Verplicht' | 'Actief' | 'Actief beleid' | 'In ontwikkeling' | 'Provincie';
 
 export interface BouwblokWaarde {
   label: string;
@@ -67,6 +67,7 @@ export const STATUS_COLOR: Record<SROIStatus, string> = {
   'Actief': 'bg-blue-100 text-blue-700',
   'Actief beleid': 'bg-blue-100 text-blue-700',
   'In ontwikkeling': 'bg-yellow-100 text-yellow-700',
+  'Provincie': 'bg-purple-100 text-purple-700',
 };
 
 export const doelgroepLabels = {
