@@ -43,11 +43,6 @@ function muniStyle(g: GemeenteInfo | undefined, sel: boolean): L.PathOptions {
   };
 }
 
-function provStyle(isSeeded: boolean): L.PathOptions {
-  return isSeeded
-    ? { fillColor: '#9333ea', fillOpacity: 0.08, color: '#9333ea', weight: 2.5, dashArray: undefined }
-    : { fillColor: 'transparent', fillOpacity: 0, color: '#9333ea', weight: 1, opacity: 0.25 };
-}
 
 interface Props {
   gemeenten: GemeenteInfo[];
@@ -206,43 +201,58 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       })
       .catch(console.error);
 
-    // ── Provincie layer (bovenop gemeenten) ──────────────────────────────────
+    // ── Provincie layer — alleen visueel, geen klik-onderschepping ─────────
     fetch(PROV_URL)
       .then(r => r.json())
       .then(geojson => {
+        // Niet-interactieve grenslaag: klikken gaan door naar gemeenten eronder
         L.geoJSON(geojson, {
+          interactive: false,
           style: (feature) => {
             const naam = feature?.properties?.statnaam as string | undefined;
             const isSeeded = naam ? provincieByNaam.has(naam) : false;
-            return provStyle(isSeeded);
-          },
-          onEachFeature: (feature, lyr) => {
-            const naam = feature.properties?.statnaam as string | undefined;
-            const provInfo = naam ? provincieByNaam.get(naam) : undefined;
-
-            if (!provInfo) return; // niet-seeded provincies: geen interactie
-
-            lyr.on({
-              mouseover: (e) => {
-                const p = e.target as L.Path;
-                p.setStyle({ fillColor: '#9333ea', fillOpacity: 0.22, color: '#7e22ce', weight: 3 });
-                p.bringToFront();
-              },
-              mouseout: () => {
-                (lyr as unknown as L.Path).setStyle(provStyle(true));
-              },
-              click: () => {
-                onSelectRef.current(provInfo);
-                const b = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
-                if (b) map.fitBounds(b, { maxZoom: 10, animate: true, padding: [30, 30] });
-              },
-            });
-            lyr.bindTooltip(`📋 ${provInfo.naam} — klik voor SROI-info`, {
-              sticky: true,
-              className: 'gemeente-tooltip provincie-tooltip',
-            });
+            return isSeeded
+              ? { fillOpacity: 0, color: '#9333ea', weight: 1.5, opacity: 0.55, dashArray: '7 5' }
+              : { fillOpacity: 0, color: '#9333ea', weight: 0.7, opacity: 0.18, dashArray: '4 4' };
           },
         }).addTo(map);
+
+        // Klikbaar label-icoon in het centrum van elke seeded provincie
+        (geojson as GeoJSON.FeatureCollection).features.forEach(feature => {
+          const naam = feature.properties?.statnaam as string | undefined;
+          const provInfo = naam ? provincieByNaam.get(naam) : undefined;
+          if (!provInfo) return;
+
+          // Bereken center via bounds van alle coordinaten
+          const coords: number[][] = [];
+          const collect = (c: unknown): void => {
+            if (Array.isArray(c) && typeof c[0] === 'number') { coords.push(c as number[]); }
+            else if (Array.isArray(c)) c.forEach(collect);
+          };
+          collect(feature.geometry);
+          if (!coords.length) return;
+          const lats = coords.map(c => c[1]);
+          const lngs = coords.map(c => c[0]);
+          const center = L.latLng(
+            (Math.min(...lats) + Math.max(...lats)) / 2,
+            (Math.min(...lngs) + Math.max(...lngs)) / 2
+          );
+
+          const marker = L.marker(center, {
+            icon: L.divIcon({
+              className: 'provincie-badge',
+              html: `<button class="prov-btn" title="${provInfo.naam} — klik voor SROI-info">🏛 ${provInfo.naam.replace('Provincie ', '')}</button>`,
+              iconSize: undefined,
+              iconAnchor: [60, 12],
+            }),
+            zIndexOffset: 500,
+          });
+          marker.on('click', () => {
+            onSelectRef.current(provInfo);
+            map.setView(center, Math.max(map.getZoom(), 9), { animate: true });
+          });
+          marker.addTo(map);
+        });
       })
       .catch(console.error);
 
@@ -297,6 +307,16 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         .zoom-labels-large .label-large { display: block; }
         .zoom-labels-all .label-large { display: block; }
         .zoom-labels-all .label-small { display: block; }
+        .provincie-badge { background: transparent !important; border: none !important; box-shadow: none !important; }
+        .prov-btn {
+          background: rgba(147,51,234,0.12); border: 1.5px solid #9333ea;
+          color: #7e22ce; font-size: 11px; font-weight: 700;
+          padding: 3px 8px; border-radius: 20px; cursor: pointer;
+          white-space: nowrap; pointer-events: auto;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+          transition: background 0.15s;
+        }
+        .prov-btn:hover { background: rgba(147,51,234,0.25); }
       `}</style>
       <div ref={divRef} className="w-full h-full" />
     </>
