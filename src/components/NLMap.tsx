@@ -238,18 +238,24 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
             (Math.min(...lngs) + Math.max(...lngs)) / 2
           );
 
+          const shortName = provInfo.naam.replace('Provincie ', '');
           const marker = L.marker(center, {
             icon: L.divIcon({
               className: 'provincie-badge',
-              html: `<button class="prov-btn" title="${provInfo.naam} — klik voor SROI-info">🏛 ${provInfo.naam.replace('Provincie ', '')}</button>`,
-              iconSize: undefined,
-              iconAnchor: [60, 12],
+              html: `<div class="prov-btn">🏛 ${shortName}</div>`,
+              iconSize: [130, 28],
+              iconAnchor: [65, 14],
             }),
-            zIndexOffset: 500,
+            zIndexOffset: 600,
+            interactive: true,
           });
           marker.on('click', () => {
             onSelectRef.current(provInfo);
             map.setView(center, Math.max(map.getZoom(), 9), { animate: true });
+          });
+          marker.bindTooltip(`Klik voor SROI-info: ${provInfo.naam}`, {
+            sticky: false,
+            className: 'gemeente-tooltip provincie-tooltip',
           });
           marker.addTo(map);
         });
@@ -307,16 +313,18 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         .zoom-labels-large .label-large { display: block; }
         .zoom-labels-all .label-large { display: block; }
         .zoom-labels-all .label-small { display: block; }
-        .provincie-badge { background: transparent !important; border: none !important; box-shadow: none !important; }
+        .provincie-badge { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; }
         .prov-btn {
-          background: rgba(147,51,234,0.12); border: 1.5px solid #9333ea;
-          color: #7e22ce; font-size: 11px; font-weight: 700;
-          padding: 3px 8px; border-radius: 20px; cursor: pointer;
-          white-space: nowrap; pointer-events: auto;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+          background: rgba(147,51,234,0.15); border: 2px solid #9333ea;
+          color: #6b21a8; font-size: 11px; font-weight: 800;
+          padding: 4px 10px; border-radius: 20px; cursor: pointer;
+          white-space: nowrap;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+          text-align: center; line-height: 1.4;
           transition: background 0.15s;
+          width: 130px;
         }
-        .prov-btn:hover { background: rgba(147,51,234,0.25); }
+        .prov-btn:hover { background: rgba(147,51,234,0.30); }
       `}</style>
       <div ref={divRef} className="w-full h-full" />
     </>

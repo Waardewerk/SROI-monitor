@@ -175,7 +175,7 @@ export default function App() {
             <ChevronDown className="w-3 h-3" />
           </button>
           {provincieMenuOpen && (
-            <div className="absolute right-0 top-full mt-1 bg-white border border-lijn rounded-xl shadow-lg z-50 min-w-[220px]">
+            <div className="absolute right-0 top-full mt-1 bg-white border border-lijn rounded-xl shadow-lg z-[1001] min-w-[220px]">
               <p className="px-3 pt-2 pb-1 text-xs text-grijs font-medium uppercase tracking-wider">Provinciale opdrachtgevers</p>
               {seededProvincies.map(p => (
                 <button
