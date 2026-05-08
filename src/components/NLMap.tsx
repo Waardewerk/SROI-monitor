@@ -3,11 +3,18 @@ import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { GemeenteInfo } from '../types';
+import { seededProvincies } from '../data/gemeenten';
 
-const GEO_URL = 'https://cartomap.github.io/nl/wgs84/gemeente_2024.geojson';
+const GEO_URL  = 'https://cartomap.github.io/nl/wgs84/gemeente_2024.geojson';
+const PROV_URL = 'https://cartomap.github.io/nl/wgs84/provincie_2024.geojson';
 
 const NL_BOUNDS = L.latLngBounds(L.latLng(50.6, 3.2), L.latLng(53.7, 7.3));
 const NL_CENTER: L.LatLngExpression = [52.35, 5.27];
+
+// Build lookup: province naam → GemeenteInfo (province entry)
+const provincieByNaam = new Map<string, GemeenteInfo>(
+  seededProvincies.map(p => [p.naam.replace('Provincie ', ''), p])
+);
 
 function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
   if (isSelected) return '#C2185B';
@@ -36,6 +43,12 @@ function muniStyle(g: GemeenteInfo | undefined, sel: boolean): L.PathOptions {
   };
 }
 
+function provStyle(isSeeded: boolean): L.PathOptions {
+  return isSeeded
+    ? { fillColor: '#9333ea', fillOpacity: 0.08, color: '#9333ea', weight: 2.5, dashArray: undefined }
+    : { fillColor: 'transparent', fillOpacity: 0, color: '#9333ea', weight: 1, opacity: 0.25 };
+}
+
 interface Props {
   gemeenten: GemeenteInfo[];
   zoek: string;
@@ -50,12 +63,11 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
   const geojsonRef = useRef<L.GeoJSON | null>(null);
   const dataMapRef = useRef<Map<string, GemeenteInfo>>(new Map());
   const exportSelectedRef = useRef(exportSelected);
-  // Keep onSelect in a ref so map never reinitializes when it changes
   const onSelectRef = useRef(onSelect);
   useEffect(() => { onSelectRef.current = onSelect; }, [onSelect]);
   useEffect(() => { exportSelectedRef.current = exportSelected; }, [exportSelected]);
 
-  // Build lookup + re-style
+  // Build lookup + re-style gemeenten
   useEffect(() => {
     const m = new Map<string, GemeenteInfo>();
     gemeenten.forEach(g => m.set(g.gmCode, g));
@@ -81,7 +93,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     });
   }, [exportSelected]);
 
-  // Init map ONCE — no dependencies that change during normal use
+  // Init map ONCE
   useEffect(() => {
     if (!divRef.current || mapRef.current) return;
 
@@ -113,6 +125,7 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     }
     map.on('zoomend', updateLabels);
 
+    // ── Gemeente layer ────────────────────────────────────────────────────────
     fetch(GEO_URL)
       .then(r => r.json())
       .then(geojson => {
@@ -127,7 +140,6 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
             const naam = feature.properties?.statnaam as string | undefined;
             const g = code ? dataMapRef.current.get(code) : undefined;
 
-            // Label
             if (naam) {
               const bounds = (lyr as unknown as L.GeoJSON).getBounds?.();
               if (bounds) {
@@ -173,7 +185,6 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
                   instellingen: [], isSeeded: false,
                 } : null);
                 if (target) {
-                  // Use ref so this closure never goes stale
                   onSelectRef.current(target);
                   if (!exportSelectedRef.current.size) {
                     const b2 = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
@@ -195,8 +206,48 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
       })
       .catch(console.error);
 
+    // ── Provincie layer (bovenop gemeenten) ──────────────────────────────────
+    fetch(PROV_URL)
+      .then(r => r.json())
+      .then(geojson => {
+        L.geoJSON(geojson, {
+          style: (feature) => {
+            const naam = feature?.properties?.statnaam as string | undefined;
+            const isSeeded = naam ? provincieByNaam.has(naam) : false;
+            return provStyle(isSeeded);
+          },
+          onEachFeature: (feature, lyr) => {
+            const naam = feature.properties?.statnaam as string | undefined;
+            const provInfo = naam ? provincieByNaam.get(naam) : undefined;
+
+            if (!provInfo) return; // niet-seeded provincies: geen interactie
+
+            lyr.on({
+              mouseover: (e) => {
+                const p = e.target as L.Path;
+                p.setStyle({ fillColor: '#9333ea', fillOpacity: 0.22, color: '#7e22ce', weight: 3 });
+                p.bringToFront();
+              },
+              mouseout: () => {
+                (lyr as unknown as L.Path).setStyle(provStyle(true));
+              },
+              click: () => {
+                onSelectRef.current(provInfo);
+                const b = (lyr as unknown as { getBounds?: () => L.LatLngBounds }).getBounds?.();
+                if (b) map.fitBounds(b, { maxZoom: 10, animate: true, padding: [30, 30] });
+              },
+            });
+            lyr.bindTooltip(`📋 ${provInfo.naam} — klik voor SROI-info`, {
+              sticky: true,
+              className: 'gemeente-tooltip provincie-tooltip',
+            });
+          },
+        }).addTo(map);
+      })
+      .catch(console.error);
+
     return () => { map.remove(); mapRef.current = null; geojsonRef.current = null; };
-  }, []); // empty deps — map initializes once only
+  }, []);
 
   // Zoom to search
   useEffect(() => {
@@ -227,6 +278,9 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
           box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .gemeente-tooltip::before { display: none; }
+        .provincie-tooltip {
+          background: #581c87 !important;
+        }
         .leaflet-container { background: #e8ecf0; }
         .gemeente-label {
           background: transparent !important; border: none !important;
