@@ -35,15 +35,16 @@ function buildFromSeeded(): GemeenteInfo[] {
 export function useCBSData() {
   const [alle, setAlle] = useState<GemeenteInfo[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function load() {
-      try {
-        // Start met seeded data zodat de kaart direct zichtbaar is
-        setAlle(buildFromSeeded());
+    // Seeded data direct beschikbaar — kaart zichtbaar zonder wachten op CBS
+    const seeded = buildFromSeeded();
+    setAlle(seeded);
+    setLoading(false);
 
-        // Try 2024, fall back to 2023 if empty
+    // CBS op de achtergrond inladen voor volledige gemeentedata
+    async function loadCBS() {
+      try {
         let records = await fetchCBS('2024JJ00');
         if (records.filter(r => r.GemeentecodeRegiocode?.startsWith('GM')).length < 10) {
           records = await fetchCBS('2023JJ00');
@@ -62,21 +63,18 @@ export function useCBSData() {
           })
           .filter(g => g.bijstand > 0 || g.isSeeded);
 
-        // Add seeded not in CBS
+        // Voeg seeded toe die niet in CBS zitten
         const cbsCodes = new Set(result.map(g => g.gmCode));
         seededByGmCode.forEach((g, code) => { if (!cbsCodes.has(code)) result.push(g); });
 
         result.sort((a, b) => b.bijstand - a.bijstand);
         setAlle(result);
-      } catch (e) {
-        // CBS timeout of fout: seeded data is al geladen, geen actie nodig
-        setError(String(e));
-      } finally {
-        setLoading(false);
+      } catch {
+        // CBS timeout of fout — seeded data blijft actief, geen actie nodig
       }
     }
-    load();
+    loadCBS();
   }, []);
 
-  return { alle, loading, error };
+  return { alle, loading };
 }
