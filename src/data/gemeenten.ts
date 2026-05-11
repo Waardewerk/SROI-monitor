@@ -1830,7 +1830,7 @@ export const seededGemeenten: GemeenteInfo[] = [
   },
   {
     naam: 'Koggenland',
-    gmCode: 'GM0437',
+    gmCode: 'GM1598',
     provincie: 'Noord-Holland',
     bijstand: 0, buigBudget: 0, reintegratiebudget: 0,
     sroi: {
@@ -1867,7 +1867,7 @@ export const seededGemeenten: GemeenteInfo[] = [
   },
   {
     naam: 'Medemblik',
-    gmCode: 'GM0289',
+    gmCode: 'GM0420',
     provincie: 'Noord-Holland',
     bijstand: 0, buigBudget: 0, reintegratiebudget: 0,
     sroi: {
