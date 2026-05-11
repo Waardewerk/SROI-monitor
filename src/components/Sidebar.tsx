@@ -8,8 +8,9 @@ import SROIRegelsTab from './tabs/SROIRegelsTab';
 import SubsidieTab from './tabs/SubsidieTab';
 import ContactTab from './tabs/ContactTab';
 import SuccessenTab from './tabs/SuccessenTab';
+import AanbestedingenTab from './tabs/AanbestedingenTab';
 
-type Tab = 'doelgroepen' | 'sroi' | 'subsidie' | 'contact' | 'cases';
+type Tab = 'doelgroepen' | 'sroi' | 'subsidie' | 'contact' | 'cases' | 'aanbestedingen';
 
 interface Props {
   g: GemeenteInfo;
@@ -28,6 +29,7 @@ export default function Sidebar({ g, onClose }: Props) {
     ...(!isProvincie ? [{ id: 'subsidie' as Tab, label: 'Subsidie' }] : []),
     { id: 'contact',     label: 'Contact' },
     { id: 'cases',       label: 'Cases' },
+    { id: 'aanbestedingen', label: 'Aanbestedingen' },
   ];
 
   const drempelLabel = g.sroi.drempel
@@ -88,6 +90,7 @@ export default function Sidebar({ g, onClose }: Props) {
         {tab === 'subsidie'    && <SubsidieTab    g={g} />}
         {tab === 'contact'     && <ContactTab     g={g} />}
         {tab === 'cases'       && <SuccessenTab   g={g} />}
+        {tab === 'aanbestedingen' && <AanbestedingenTab g={g} />}
       </div>
 
       {/* Bottom CTA */}
