@@ -1003,6 +1003,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2034,6 +2043,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2071,6 +2089,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
@@ -2110,6 +2137,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2147,6 +2183,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
@@ -2186,6 +2231,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2223,6 +2277,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
@@ -2262,6 +2325,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2299,6 +2371,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
@@ -2338,6 +2419,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2375,6 +2465,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
@@ -2414,6 +2513,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
     ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
+    ],
     isSeeded: true,
   },
   {
@@ -2451,6 +2559,15 @@ export const seededGemeenten: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 1', waarde: '25% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 2', waarde: '50% vrijstelling SROI-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO trede 3 / PSO 30+', waarde: '75% vrijstelling SROI-verplichting' },
+    ],
+    succesverhalen: [
+      {
+        titel: 'Van stage naar een duurzame baan',
+        tekst: 'Botermans Elektrotechniek zocht een zelfstandig elektromonteur en came via WSP Holland Rijnland in contact met een statushouder. Na een succesvolle stage — begeleid door zowel het bedrijf als WSP HR — is de medewerker in vaste dienst genomen. Een mooi voorbeeld van hoe een stageplek kan leiden tot duurzame plaatsing.',
+        datum: 'Juni 2023',
+        url: 'https://wsphollandrijnland.nl/praktijkverhaal/van-stage-naar-een-duurzame-baan/',
+        bron: 'WSP Holland Rijnland',
+      },
     ],
     isSeeded: true,
   },
