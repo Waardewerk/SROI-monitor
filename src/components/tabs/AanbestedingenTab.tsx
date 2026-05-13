@@ -11,12 +11,10 @@ interface Publicatie {
   opdrachtwaarde?: number;
 }
 
-const TNS_URL = 'https://www.tenderned.nl/papi/tenderned-rs-tns/publicaties';
 const TENDERNED_ZOEK = 'https://www.tenderned.nl/aankondigingen/overzicht';
 
 function tenderNetSearchUrl(naam: string): string {
-  const dienst = `Gemeente ${naam}`;
-  return `${TENDERNED_ZOEK}?aanbestedendeDienst=${encodeURIComponent(dienst)}`;
+  return `${TENDERNED_ZOEK}?aanbestedendeDienst=${encodeURIComponent(`Gemeente ${naam}`)}`;
 }
 
 function formatDate(iso: string): string {
@@ -44,7 +42,7 @@ function typeLabel(type?: string): string {
 export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
   const [data, setData] = useState<Publicatie[] | null>(null);
   const [loading, setLoading] = useState(true);
-  const [corsBlocked, setCorsBlocked] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const searchUrl = tenderNetSearchUrl(g.naam);
 
@@ -52,23 +50,19 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
     let cancelled = false;
     setLoading(true);
     setData(null);
-    setCorsBlocked(false);
+    setError(null);
 
-    fetch(`${TNS_URL}?size=100&page=0`, { headers: { Accept: 'application/json' } })
+    fetch(`/api/tenderned?gemeente=${encodeURIComponent(g.naam)}`)
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
-      .then((json: { content?: Publicatie[]; contents?: Publicatie[] }) => {
+      .then((json: { content?: Publicatie[] }) => {
         if (cancelled) return;
-        const all: Publicatie[] = json.content ?? json.contents ?? [];
-        const filtered = all.filter(p =>
-          p.aanbestedendeDienst?.toLowerCase().includes(g.naam.toLowerCase())
-        );
-        setData(filtered);
+        setData(json.content ?? []);
       })
-      .catch(() => {
-        if (!cancelled) setCorsBlocked(true);
+      .catch((err: Error) => {
+        if (!cancelled) setError(err.message);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -99,7 +93,7 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
         </div>
       )}
 
-      {!loading && corsBlocked && (
+      {!loading && error && (
         <div className="flex items-start gap-2 text-xs text-grijs bg-bg-alt rounded-xl p-3">
           <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-500" />
           <span>
@@ -108,7 +102,7 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
         </div>
       )}
 
-      {!loading && !corsBlocked && data !== null && data.length === 0 && (
+      {!loading && !error && data !== null && data.length === 0 && (
         <div className="flex items-start gap-2 text-xs text-grijs bg-bg-alt rounded-xl p-3">
           <Search className="w-4 h-4 flex-shrink-0 mt-0.5" />
           <span>
