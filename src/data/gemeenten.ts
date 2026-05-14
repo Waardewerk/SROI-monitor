@@ -2571,6 +2571,14 @@ export const seededGemeenten: GemeenteInfo[] = [
     ],
     isSeeded: true,
   },
+  {
+    naam: 'Zuid-Limburg Zuid', gmCode: 'GM1903', provincie: 'Limburg',
+    werkloosheid: 4.5, bijstand: 1800, buigBudget: 32400000, reintegratiebudget: 2916000,
+    sroi: { pct: 5, status: 'Geen data', drempel: 250000 },
+    doelgroepen: { bijstand: { n: 1800, bereikbaarheid: 40 }, nuggers: { n: 630, bereikbaarheid: 35 }, statushouders: { n: 216, bereikbaarheid: 30 }, vsv: { n: 144, bereikbaarheid: 20 }, arbeidsbeperkt: { n: 360, bereikbaarheid: 40 }, ouderen55plus: { n: 270, bereikbaarheid: 30 } },
+    instellingen: [],
+    isSeeded: true,
+  },
 ];
 
 export const seededByGmCode = new Map<string, GemeenteInfo>(
@@ -2640,14 +2648,6 @@ export const seededProvincies: GemeenteInfo[] = [
       { sectie: 'PSO-ladder', label: 'PSO trede 3', waarde: '50% korting op SR-verplichting' },
       { sectie: 'PSO-ladder', label: 'PSO 30+ of gelijkwaardig', waarde: 'Vrijstelling SR-verplichting' },
     ],
-    isSeeded: true,
-  },
-  {
-    naam: 'Zuid-Limburg Zuid', gmCode: 'GM1903', provincie: 'Limburg',
-    werkloosheid: 4.5, bijstand: 1800, buigBudget: 32400000, reintegratiebudget: 2916000,
-    sroi: { pct: 5, status: 'Geen data', drempel: 250000 },
-    doelgroepen: { bijstand: { n: 1800, bereikbaarheid: 40 }, nuggers: { n: 630, bereikbaarheid: 35 }, statushouders: { n: 216, bereikbaarheid: 30 }, vsv: { n: 144, bereikbaarheid: 20 }, arbeidsbeperkt: { n: 360, bereikbaarheid: 40 }, ouderen55plus: { n: 270, bereikbaarheid: 30 } },
-    instellingen: [],
     isSeeded: true,
   },
 ];
