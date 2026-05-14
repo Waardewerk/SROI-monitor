@@ -5,8 +5,8 @@ const TNS_BASE = 'https://www.tenderned.nl/papi/tenderned-rs-tns/publicaties';
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const gemeente = typeof req.query.gemeente === 'string' ? req.query.gemeente : '';
 
-  const user = process.env.TENDERNED_USER;
-  const pass = process.env.TENDERNED_PASS;
+  const user = process.env.TNUSER;
+  const pass = process.env.TNPASS;
 
   if (!user || !pass) {
     return res.status(500).json({ error: 'TenderNed credentials niet geconfigureerd.' });
