@@ -2589,7 +2589,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'Geen data', drempel: 250000 },
     doelgroepen: { bijstand: { n: 900, bereikbaarheid: 40 }, nuggers: { n: 315, bereikbaarheid: 35 }, statushouders: { n: 108, bereikbaarheid: 30 }, vsv: { n: 72, bereikbaarheid: 20 }, arbeidsbeperkt: { n: 180, bereikbaarheid: 40 }, ouderen55plus: { n: 135, bereikbaarheid: 30 } },
     instellingen: [], isSeeded: true },
-  { naam: 'Gulpen-Wittem', gmCode: 'GM0881', provincie: 'Limburg',
+  { naam: 'Gulpen-Wittem', gmCode: 'GM1729', provincie: 'Limburg',
     werkloosheid: 3.8, bijstand: 650, buigBudget: 11700000, reintegratiebudget: 1053000,
     sroi: { pct: 5, status: 'Geen data', drempel: 250000 },
     doelgroepen: { bijstand: { n: 650, bereikbaarheid: 40 }, nuggers: { n: 228, bereikbaarheid: 35 }, statushouders: { n: 78, bereikbaarheid: 30 }, vsv: { n: 52, bereikbaarheid: 20 }, arbeidsbeperkt: { n: 130, bereikbaarheid: 40 }, ouderen55plus: { n: 98, bereikbaarheid: 30 } },
