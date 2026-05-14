@@ -22,14 +22,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     });
 
-    const text = await upstream.text();
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `TenderNed API: HTTP ${upstream.status}` });
+    }
 
-    // Stuur ruwe response terug zodat we de structuur zien
-    return res.status(200).json({
-      httpStatus: upstream.status,
-      rawPreview: text.slice(0, 2000),
-      gemeente,
-    });
+    const json = await upstream.json() as { content?: Record<string, unknown>[] };
+    const all = json.content ?? [];
+
+    const filtered = gemeente
+      ? all.filter(p => {
+          const naam = String(p.opdrachtgeverNaam ?? '');
+          return naam.toLowerCase().includes(gemeente.toLowerCase());
+        })
+      : all;
+
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
+    return res.status(200).json({ content: filtered });
   } catch (err) {
     return res.status(502).json({ error: String(err) });
   }

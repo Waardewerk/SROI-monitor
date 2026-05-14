@@ -2,19 +2,27 @@ import { useEffect, useState } from 'react';
 import { ExternalLink, FileText, Calendar, AlertCircle, Loader2, Search } from 'lucide-react';
 import type { GemeenteInfo } from '../../types';
 
+interface TypePublicatie {
+  code: string;
+  omschrijving: string;
+}
+
 interface Publicatie {
   publicatieId: string;
-  titel: string;
+  aanbestedingNaam: string;
   publicatieDatum: string;
-  typePublicatie?: string;
-  aanbestedendeDienst?: string;
-  opdrachtwaarde?: number;
+  sluitingsDatum?: string;
+  typePublicatie?: TypePublicatie;
+  opdrachtgeverNaam?: string;
+  link?: { href: string; title: string };
+  opdrachtBeschrijving?: string;
+  europees?: boolean;
 }
 
 const TENDERNED_ZOEK = 'https://www.tenderned.nl/aankondigingen/overzicht';
 
 function tenderNetSearchUrl(naam: string): string {
-  return `${TENDERNED_ZOEK}?aanbestedendeDienst=${encodeURIComponent(`Gemeente ${naam}`)}`;
+  return `${TENDERNED_ZOEK}?opdrachtgeverNaam=${encodeURIComponent(`Gemeente ${naam}`)}`;
 }
 
 function formatDate(iso: string): string {
@@ -25,18 +33,6 @@ function formatDate(iso: string): string {
   } catch {
     return iso;
   }
-}
-
-function typeLabel(type?: string): string {
-  if (!type) return 'Aankondiging';
-  const map: Record<string, string> = {
-    AANKONDIGING_VAN_EEN_OPDRACHT: 'Nieuwe opdracht',
-    VEREENVOUDIGDE_AANKONDIGING: 'Vereenvoudigd',
-    AANKONDIGING_VAN_GEGUNDE_OPDRACHT: 'Gegund',
-    AANKONDIGING_RECTIFICATIE: 'Rectificatie',
-    VOORAANKONDIGING: 'Vooraankondiging',
-  };
-  return map[type] ?? type;
 }
 
 export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
@@ -81,7 +77,7 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
       >
         <div>
           <p className="text-sm font-semibold text-blauw">Zoek op TenderNed</p>
-          <p className="text-xs text-grijs mt-0.5">Aanbestedingen van {g.naam}</p>
+          <p className="text-xs text-grijs mt-0.5">Alle aanbestedingen van Gemeente {g.naam}</p>
         </div>
         <ExternalLink className="w-4 h-4 text-blauw flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
       </a>
@@ -96,18 +92,14 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
       {!loading && error && (
         <div className="flex items-start gap-2 text-xs text-grijs bg-bg-alt rounded-xl p-3">
           <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-500" />
-          <span>
-            Live data kon niet worden geladen. Gebruik de knop hierboven om aanbestedingen direct op TenderNed te bekijken.
-          </span>
+          <span>Live data kon niet worden geladen. Gebruik de knop hierboven om aanbestedingen direct op TenderNed te bekijken.</span>
         </div>
       )}
 
       {!loading && !error && data !== null && data.length === 0 && (
         <div className="flex items-start gap-2 text-xs text-grijs bg-bg-alt rounded-xl p-3">
           <Search className="w-4 h-4 flex-shrink-0 mt-0.5" />
-          <span>
-            Geen recente aanbestedingen gevonden voor <strong>{g.naam}</strong>. Kijk op TenderNed voor het volledige overzicht.
-          </span>
+          <span>Geen recente aanbestedingen gevonden voor <strong>Gemeente {g.naam}</strong>. Kijk op TenderNed voor het volledige overzicht.</span>
         </div>
       )}
 
@@ -119,16 +111,16 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
           {data.slice(0, 10).map(p => (
             <a
               key={p.publicatieId}
-              href={`https://www.tenderned.nl/aankondigingen/overzicht/${p.publicatieId}`}
+              href={p.link?.href ?? `https://www.tenderned.nl/aankondigingen/overzicht/${p.publicatieId}`}
               target="_blank"
               rel="noopener noreferrer"
               className="block border border-lijn rounded-xl p-3 hover:border-blauw/40 hover:bg-blauw/5 transition-colors group"
             >
               <div className="flex items-start gap-2">
                 <FileText className="w-4 h-4 text-grijs flex-shrink-0 mt-0.5 group-hover:text-blauw transition-colors" />
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="text-xs font-medium text-blauw leading-snug line-clamp-2 group-hover:underline">
-                    {p.titel || '(geen titel)'}
+                    {p.aanbestedingNaam || '(geen titel)'}
                   </p>
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {p.publicatieDatum && (
@@ -137,14 +129,17 @@ export default function AanbestedingenTab({ g }: { g: GemeenteInfo }) {
                         {formatDate(p.publicatieDatum)}
                       </span>
                     )}
-                    {p.typePublicatie && (
+                    {p.typePublicatie?.omschrijving && (
                       <span className="text-xs bg-blauw/10 text-blauw px-1.5 py-0.5 rounded-full">
-                        {typeLabel(p.typePublicatie)}
+                        {p.typePublicatie.omschrijving}
                       </span>
                     )}
-                    {p.opdrachtwaarde && (
+                    {p.europees && (
+                      <span className="text-xs bg-magenta/10 text-magenta px-1.5 py-0.5 rounded-full">Europees</span>
+                    )}
+                    {p.sluitingsDatum && (
                       <span className="text-xs text-grijs">
-                        € {p.opdrachtwaarde.toLocaleString('nl-NL')}
+                        Sluit {formatDate(p.sluitingsDatum)}
                       </span>
                     )}
                   </div>
