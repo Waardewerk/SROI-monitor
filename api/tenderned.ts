@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+// TenderNed XML webservice endpoint
 const TNS_BASE = 'https://www.tenderned.nl/papi/tenderned-rs-tns/publicaties';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -14,36 +15,62 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const basic = Buffer.from(`${user}:${pass}`).toString('base64');
 
-  try {
-    const upstream = await fetch(`${TNS_BASE}?size=200&page=0`, {
-      headers: {
-        Authorization: `Basic ${basic}`,
-        Accept: 'application/json',
-      },
-    });
+  // Probeer eerst zonder size/page params
+  const urls = [
+    `${TNS_BASE}`,
+    `${TNS_BASE}?rows=100&start=0`,
+    `${TNS_BASE}?size=100&page=0`,
+    `${TNS_BASE}?max=100&offset=0`,
+  ];
 
-    if (!upstream.ok) {
-      return res.status(upstream.status).json({ error: `TenderNed API: HTTP ${upstream.status}` });
+  let lastStatus = 0;
+  let lastBody = '';
+
+  for (const url of urls) {
+    try {
+      const upstream = await fetch(url, {
+        headers: {
+          Authorization: `Basic ${basic}`,
+          Accept: 'application/json, application/xml, */*',
+        },
+      });
+
+      lastStatus = upstream.status;
+      const text = await upstream.text();
+      lastBody = text.slice(0, 500);
+
+      if (upstream.ok) {
+        // Probeer JSON te parsen
+        let parsed: Record<string, unknown>;
+        try {
+          parsed = JSON.parse(text);
+        } catch {
+          // Als het XML is, stuur raw terug met debug info
+          return res.status(200).json({
+            debug: { url, format: 'xml', preview: text.slice(0, 300) },
+            content: [],
+          });
+        }
+
+        const all = (parsed.content ?? parsed.contents ?? parsed.publicaties ?? []) as Record<string, unknown>[];
+
+        const filtered = gemeente
+          ? all.filter(p => {
+              const dienst = String(p.aanbestedendeDienst ?? '');
+              return dienst.toLowerCase().includes(gemeente.toLowerCase());
+            })
+          : all;
+
+        res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
+        return res.status(200).json({ content: filtered, debug: { url } });
+      }
+    } catch (err) {
+      lastBody = String(err);
     }
-
-    const json = await upstream.json() as {
-      content?: Record<string, unknown>[];
-      contents?: Record<string, unknown>[];
-    };
-
-    const all = json.content ?? json.contents ?? [];
-
-    const filtered = gemeente
-      ? all.filter((p) => {
-          const dienst = String((p as Record<string, unknown>).aanbestedendeDienst ?? '');
-          return dienst.toLowerCase().includes(gemeente.toLowerCase());
-        })
-      : all;
-
-    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-    return res.status(200).json({ content: filtered });
-  } catch (err) {
-    console.error('TenderNed proxy error:', err);
-    return res.status(502).json({ error: 'Kon TenderNed niet bereiken.' });
   }
+
+  return res.status(502).json({
+    error: `TenderNed API: HTTP ${lastStatus}`,
+    debug: { lastBody },
+  });
 }
