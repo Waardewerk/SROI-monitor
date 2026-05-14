@@ -55,6 +55,15 @@ export default function Sidebar({ g, onClose }: Props) {
         </button>
       </div>
 
+
+      {/* Geen data banner */}
+      {g.sroi.status === 'Geen data' && (
+        <div className="flex items-center gap-2 bg-orange-50 border-b border-orange-200 px-4 py-2.5">
+          <span className="text-xs text-orange-700 font-medium">geen data beschikbaar</span>
+          <span className="text-xs text-orange-500">— Deze gemeente deelt geen SROI-informatie.</span>
+        </div>
+      )}
+
       {/* Quick stats */}
       <div className="grid grid-cols-3 border-b border-lijn flex-shrink-0">
         <div className="px-3 py-2 border-r border-lijn text-center">

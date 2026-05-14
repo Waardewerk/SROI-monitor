@@ -117,6 +117,9 @@ export default function App() {
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 rounded-sm bg-purple-400 inline-block" />Provincie
             </span>
+            <span className="flex items-center gap-1">
+              <span className="w-3 h-3 rounded-sm bg-orange-200 inline-block" />Geen data
+            </span>
           </div>
         )}
 

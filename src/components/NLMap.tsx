@@ -30,6 +30,7 @@ function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
     }
     case 'Actief':
     case 'Actief beleid': return '#90caf9';
+    case 'Geen data': return '#fed7aa';
     default: return '#cfd8e8';
   }
 }
