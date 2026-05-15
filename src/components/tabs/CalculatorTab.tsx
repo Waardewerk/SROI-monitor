@@ -25,14 +25,8 @@ function groepeerBouwblokken(blokken: BouwblokWaarde[]): Record<string, Bouwblok
   }, {});
 }
 
-// Gemiddelde waarde per plaatsing: goedkoopste bouwblok, anders €35.000 als default
-function gemiddeldeWaardePlaatsing(blokken: BouwblokWaarde[]): number {
-  const bedragen = blokken
-    .map(b => parseEuroBedrag(b.waarde))
-    .filter((v): v is number => v !== null && v >= 5000);
-  if (bedragen.length === 0) return 35000;
-  return Math.min(...bedragen);
-}
+// Vaste referentie: voltijdse Participatiewet-plaatsing
+const PARTICIPATIEWET_PLAATSING = 40000;
 
 interface Props { g: GemeenteInfo }
 
@@ -51,7 +45,7 @@ export default function CalculatorTab({ g }: Props) {
 
   const blokken = g.bouwblokwaarden ?? [];
   const groepen = groepeerBouwblokken(blokken);
-  const waardePlaatsing = gemiddeldeWaardePlaatsing(blokken);
+  const waardePlaatsing = PARTICIPATIEWET_PLAATSING;
   const aantalPlaatsingen = sroiBedrag > 0 ? Math.ceil(sroiBedrag / waardePlaatsing) : null;
 
   // Totaal bereikbare mensen uit CBS-data
@@ -87,9 +81,9 @@ export default function CalculatorTab({ g }: Props) {
               </div>
               {aantalPlaatsingen !== null && (
                 <div className="flex items-baseline gap-1.5 flex-wrap">
-                  <span className="text-sm text-grijs">Dat zijn</span>
+                  <span className="text-sm text-grijs">Dat zijn ongeveer</span>
                   <span className="text-xl font-bold text-blauw">{aantalPlaatsingen}</span>
-                  <span className="text-sm text-grijs">plaatsing{aantalPlaatsingen !== 1 ? 'en' : ''}.</span>
+                  <span className="text-sm text-grijs">voltijdse Participatiewet-plaatsing{aantalPlaatsingen !== 1 ? 'en' : ''} (à €40.000/jaar).</span>
                 </div>
               )}
             </>
