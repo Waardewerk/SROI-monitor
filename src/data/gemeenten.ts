@@ -1034,7 +1034,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026. Uitvoerder: Baanbrekend Drechtsteden / GR Sociaal.' },
     doelgroepen: { bijstand: { n: 5500, bereikbaarheid: 55 }, nuggers: { n: 1925, bereikbaarheid: 40 }, statushouders: { n: 660, bereikbaarheid: 35 }, vsv: { n: 440, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 1100, bereikbaarheid: 45 }, ouderen55plus: { n: 825, bereikbaarheid: 30 } },
     instellingen: [],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Dordrecht (Drechtsteden)' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Dordrecht (Drechtsteden)' }],
     isSeeded: true,
   },
   {
@@ -2809,7 +2809,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 750, bereikbaarheid: 50 }, nuggers: { n: 262, bereikbaarheid: 40 }, statushouders: { n: 90, bereikbaarheid: 35 }, vsv: { n: 60, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 150, bereikbaarheid: 45 }, ouderen55plus: { n: 112, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
   {
@@ -2818,7 +2818,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 900, bereikbaarheid: 50 }, nuggers: { n: 315, bereikbaarheid: 40 }, statushouders: { n: 108, bereikbaarheid: 35 }, vsv: { n: 72, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 180, bereikbaarheid: 45 }, ouderen55plus: { n: 135, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
   {
@@ -2827,7 +2827,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 1400, bereikbaarheid: 50 }, nuggers: { n: 490, bereikbaarheid: 40 }, statushouders: { n: 168, bereikbaarheid: 35 }, vsv: { n: 112, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 280, bereikbaarheid: 45 }, ouderen55plus: { n: 210, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
   {
@@ -2836,7 +2836,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 500, bereikbaarheid: 50 }, nuggers: { n: 175, bereikbaarheid: 40 }, statushouders: { n: 60, bereikbaarheid: 35 }, vsv: { n: 40, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 100, bereikbaarheid: 45 }, ouderen55plus: { n: 75, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
   {
@@ -2845,7 +2845,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 650, bereikbaarheid: 50 }, nuggers: { n: 227, bereikbaarheid: 40 }, statushouders: { n: 78, bereikbaarheid: 35 }, vsv: { n: 52, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 130, bereikbaarheid: 45 }, ouderen55plus: { n: 98, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
   {
@@ -2854,7 +2854,7 @@ export const seededGemeenten: GemeenteInfo[] = [
     sroi: { pct: 5, status: 'In ontwikkeling', drempel: 250000, monitoring: 'Nieuw beleid in voorbereiding voor alle 10 aanbestedende diensten Drechtsteden — verwachte inwerkingtreding juli 2026.' },
     doelgroepen: { bijstand: { n: 700, bereikbaarheid: 50 }, nuggers: { n: 245, bereikbaarheid: 40 }, statushouders: { n: 84, bereikbaarheid: 35 }, vsv: { n: 56, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 140, bereikbaarheid: 45 }, ouderen55plus: { n: 105, bereikbaarheid: 30 } },
     instellingen: ['Baanbrekend Drechtsteden', 'GR Sociaal'],
-    contactpersonen: [{ naam: 'Baanbrekend Drechtsteden', email: 'sroi@drechtsteden.nl', regio: 'Drechtsteden' }],
+    contactpersonen: [{ naam: 'Expertisecentrum SRoI Drechtsteden', telefoon: '078-7708770', email: 'SRoI@drechtsteden.nl', regio: 'Drechtsteden' }],
     isSeeded: true,
   },
 ];
