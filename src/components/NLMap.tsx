@@ -20,25 +20,19 @@ function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
   if (isSelected) return '#C2185B';
   if (!g) return '#e4ecf5';
   switch (g.sroi.status) {
-    case 'Verplicht': {
-      const b = g.bijstand;
-      if (b > 20000) return '#1b5e20';
-      if (b > 10000) return '#2e7d32';
-      if (b > 5000)  return '#388e3c';
-      if (b > 2000)  return '#43a047';
-      return '#66bb6a';
-    }
+    case 'Verplicht':    return '#2e7d32';
     case 'Actief':
     case 'Actief beleid': return '#90caf9';
-    case 'Geen data': return '#fed7aa';
-    default: return '#cfd8e8';
+    case 'In ontwikkeling': return '#f59e0b';
+    case 'Geen data':    return '#fed7aa';
+    default:             return '#cfd8e8';
   }
 }
 
 function muniStyle(g: GemeenteInfo | undefined, sel: boolean): L.PathOptions {
   return {
     fillColor: getColor(g, sel),
-    fillOpacity: g?.sroi.status === 'Verplicht' ? 0.80 : 0.55,
+    fillOpacity: 0.70,
     color: '#7a8fa8',
     weight: 0.8,
   };

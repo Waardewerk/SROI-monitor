@@ -106,13 +106,13 @@ export default function App() {
         {!exportMode && (
           <div className="flex items-center gap-3 text-xs text-grijs flex-1 flex-wrap">
             <span className="flex items-center gap-1">
-              <span className="w-3 h-3 rounded-sm bg-green-600 inline-block" />Verplicht SROI
+              <span className="w-3 h-3 rounded-sm inline-block" style={{background:'#2e7d32'}} />Verplicht SROI
             </span>
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 rounded-sm bg-blue-300 inline-block" />Actief beleid
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-3 h-3 rounded-sm bg-gray-400 inline-block" />In ontwikkeling
+              <span className="w-3 h-3 rounded-sm inline-block" style={{background:'#f59e0b'}} />In ontwikkeling
             </span>
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 rounded-sm bg-purple-400 inline-block" />Provincie
