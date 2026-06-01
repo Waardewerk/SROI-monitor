@@ -2885,6 +2885,36 @@ export const seededGemeenten: GemeenteInfo[] = [
     ],
     isSeeded: true,
   },
+  {
+    naam: 'Goeree-Overflakkee', gmCode: 'GM1924', provincie: 'Zuid-Holland',
+    werkloosheid: 4.5, bijstand: 1200, buigBudget: 21600000, reintegratiebudget: 1944000,
+    sroi: {
+      pct: 5, status: 'Verplicht', drempel: 250000,
+      methode: 'Bouwblokken (Arbeidsmarktregio Rijnmond 2024)',
+      uitvoerder: 'Werkcentrum Rijnmond',
+      registratiesysteem: 'Werkcentrum Rijnmond',
+      monitoring: 'Boete bij niet-nakoming: 125% van niet-ingevulde verplichting',
+      beleidsdocumentUrl: 'https://www.werkcentrumrijnmond.nl/werkgever/ik-ben-werkgever/social-return/',
+    },
+    doelgroepen: { bijstand: { n: 1200, bereikbaarheid: 55 }, nuggers: { n: 420, bereikbaarheid: 40 }, statushouders: { n: 144, bereikbaarheid: 35 }, vsv: { n: 96, bereikbaarheid: 25 }, arbeidsbeperkt: { n: 240, bereikbaarheid: 45 }, ouderen55plus: { n: 180, bereikbaarheid: 30 } },
+    instellingen: ['Werkcentrum Rijnmond'],
+    contactpersonen: [{ naam: 'Werkcentrum Rijnmond', regio: 'Arbeidsmarktregio Rijnmond' }],
+    bouwblokwaarden: [
+      { sectie: 'Doelgroepen', label: 'Participatiewet', waarde: '€ 50.000/jaar (€ 24,04/uur) — max. 3 jaar na laatste uitkering' },
+      { sectie: 'Doelgroepen', label: 'Banenafspraak / WIA / WAO', waarde: '€ 50.000/jaar (€ 24,04/uur) — altijd' },
+      { sectie: 'Doelgroepen', label: 'WW-uitkering', waarde: '€ 25.000/jaar (€ 12,02/uur) — max. 2 jaar na laatste uitkering' },
+      { sectie: 'Doelgroepen', label: 'NUG', waarde: '€ 15.000/jaar (€ 7,21/uur) — max. 2 jaar' },
+      { sectie: 'Bonus', label: 'Duurzame werkgelegenheid (vast contract)', waarde: '1× jaarwaardering doelgroep' },
+      { sectie: 'Bonus', label: '56-plusser in dienst nemen', waarde: '€ 5.000/jaar (€ 2,40/uur)' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Werken', waarde: 'Conform doelgroepwaardering' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Leren (BBL, BOL, VSO/praktijkonderwijs)', waarde: 'Conform doelgroepwaardering' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Sociaal inkopen (erkende sociaal ondernemers)', waarde: 'Factuurwaarde' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Maatschappelijke activiteiten', waarde: '€ 150/uur' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Sociaal investeren', waarde: 'Max. 25% van verplichting' },
+      { sectie: 'Overige invullingsmogelijkheden', label: 'Open sociale impact-invulling', waarde: 'Max. 10% van verplichting' },
+    ],
+    isSeeded: true,
+  },
 ];
 
 export const seededByGmCode = new Map<string, GemeenteInfo>(
