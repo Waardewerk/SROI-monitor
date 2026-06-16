@@ -16,6 +16,13 @@ const provincieByNaam = new Map<string, GemeenteInfo>(
   seededProvincies.map(p => [p.naam.replace('Provincie ', ''), p])
 );
 
+// Aliassen voor GeoJSON statnaam → gmCode
+// (GeoJSON gebruikt officiële namen zoals 's-Gravenhage, wij slaan op als 'Den Haag')
+const GEOJSON_NAAM_ALIAS: Record<string, string> = {
+  "'s-Gravenhage": 'GM0518',
+  "'s-Hertogenbosch": 'GM0796',
+};
+
 function getColor(g: GemeenteInfo | undefined, isSelected: boolean): string {
   if (isSelected) return '#C2185B';
   if (!g) return '#e4ecf5';
@@ -65,8 +72,11 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     if (geojsonRef.current) {
       geojsonRef.current.setStyle((feature) => {
         const code = feature?.properties?.statcode as string | undefined;
-        const g = code ? m.get(code) : undefined;
-        const sel = code ? exportSelectedRef.current.has(code) : false;
+        const naam = feature?.properties?.statnaam as string | undefined;
+        const aliasCode = naam ? GEOJSON_NAAM_ALIAS[naam] : undefined;
+        const g = (code ? m.get(code) : undefined) ?? (aliasCode ? m.get(aliasCode) : undefined);
+        const effectiveCode = code ?? aliasCode ?? '';
+        const sel = effectiveCode ? exportSelectedRef.current.has(effectiveCode) : false;
         return muniStyle(g, sel);
       });
     }
@@ -77,8 +87,11 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
     if (!geojsonRef.current) return;
     geojsonRef.current.setStyle((feature) => {
       const code = feature?.properties?.statcode as string | undefined;
-      const g = code ? dataMapRef.current.get(code) : undefined;
-      const sel = code ? exportSelected.has(code) : false;
+      const naam = feature?.properties?.statnaam as string | undefined;
+      const aliasCode = naam ? GEOJSON_NAAM_ALIAS[naam] : undefined;
+      const g = (code ? dataMapRef.current.get(code) : undefined) ?? (aliasCode ? dataMapRef.current.get(aliasCode) : undefined);
+      const effectiveCode = code ?? aliasCode ?? '';
+      const sel = effectiveCode ? exportSelected.has(effectiveCode) : false;
       return muniStyle(g, sel);
     });
   }, [exportSelected]);
@@ -122,13 +135,17 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         const layer = L.geoJSON(geojson, {
           style: (feature) => {
             const code = feature?.properties?.statcode as string | undefined;
-            const g = code ? dataMapRef.current.get(code) : undefined;
+            const naam = feature?.properties?.statnaam as string | undefined;
+            const aliasCode = naam ? GEOJSON_NAAM_ALIAS[naam] : undefined;
+            const g = (code ? dataMapRef.current.get(code) : undefined) ?? (aliasCode ? dataMapRef.current.get(aliasCode) : undefined);
             return muniStyle(g, false);
           },
           onEachFeature: (feature, lyr) => {
             const code = feature.properties?.statcode as string | undefined;
             const naam = feature.properties?.statnaam as string | undefined;
-            const g = code ? dataMapRef.current.get(code) : undefined;
+            const aliasCode = naam ? GEOJSON_NAAM_ALIAS[naam] : undefined;
+            const effectiveCode = code ?? aliasCode;
+            const g = (code ? dataMapRef.current.get(code) : undefined) ?? (aliasCode ? dataMapRef.current.get(aliasCode) : undefined);
 
             if (naam) {
               const bounds = (lyr as unknown as L.GeoJSON).getBounds?.();
@@ -155,14 +172,14 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
                 p.bringToFront();
               },
               mouseout: () => {
-                const g2 = code ? dataMapRef.current.get(code) : undefined;
-                const sel = code ? exportSelectedRef.current.has(code) : false;
+                const g2 = (effectiveCode ? dataMapRef.current.get(effectiveCode) : undefined);
+                const sel = effectiveCode ? exportSelectedRef.current.has(effectiveCode) : false;
                 (lyr as unknown as L.Path).setStyle(muniStyle(g2, sel));
               },
               click: () => {
-                const g2 = code ? dataMapRef.current.get(code) : undefined;
+                const g2 = effectiveCode ? dataMapRef.current.get(effectiveCode) : undefined;
                 const target = g2 ?? (naam ? {
-                  naam, gmCode: code ?? '', bijstand: 0, buigBudget: 0, reintegratiebudget: 0,
+                  naam: g2?.naam ?? naam, gmCode: effectiveCode ?? code ?? '', bijstand: 0, buigBudget: 0, reintegratiebudget: 0,
                   sroi: { pct: 5, status: 'In ontwikkeling' as const, drempel: 250000 },
                   doelgroepen: {
                     bijstand:      { n: 0, bereikbaarheid: 0 },
@@ -189,7 +206,9 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         geojsonRef.current = layer;
         layer.setStyle((feature) => {
           const code = feature?.properties?.statcode as string | undefined;
-          const g = code ? dataMapRef.current.get(code) : undefined;
+          const naam = feature?.properties?.statnaam as string | undefined;
+          const aliasCode = naam ? GEOJSON_NAAM_ALIAS[naam] : undefined;
+          const g = (code ? dataMapRef.current.get(code) : undefined) ?? (aliasCode ? dataMapRef.current.get(aliasCode) : undefined);
           return muniStyle(g, false);
         });
         updateLabels();
@@ -290,38 +309,4 @@ export default function NLMap({ gemeenten, zoek, onSelect, exportSelected = new 
         }
         .gemeente-tooltip::before { display: none; }
         .provincie-tooltip {
-          background: #581c87 !important;
-        }
-        .leaflet-container { background: #e8ecf0; }
-        .gemeente-label {
-          background: transparent !important; border: none !important;
-          box-shadow: none !important; pointer-events: none;
-        }
-        .gemeente-label span {
-          display: block; white-space: nowrap; font-size: 10px; font-weight: 700;
-          color: #1a1a2e;
-          text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 1px 1px 2px #fff, -1px -1px 2px #fff;
-          transform: translateX(-50%);
-        }
-        .label-large { display: none; }
-        .label-small { display: none; }
-        .zoom-labels-large .label-large { display: block; }
-        .zoom-labels-all .label-large { display: block; }
-        .zoom-labels-all .label-small { display: block; }
-        .provincie-badge { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; }
-        .prov-btn {
-          background: rgba(147,51,234,0.15); border: 2px solid #9333ea;
-          color: #6b21a8; font-size: 11px; font-weight: 800;
-          padding: 4px 10px; border-radius: 20px; cursor: pointer;
-          white-space: nowrap;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-          text-align: center; line-height: 1.4;
-          transition: background 0.15s;
-          width: 130px;
-        }
-        .prov-btn:hover { background: rgba(147,51,234,0.30); }
-      `}</style>
-      <div ref={divRef} className="w-full h-full" />
-    </>
-  );
-}
+          background: #581c87 !i
